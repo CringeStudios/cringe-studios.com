@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule ^sus$ sus.html [NC]

@@ -22,6 +22,8 @@
 		body {
 			text-align: center;
 			font-family: 'Courier';
+			overflow-x: hidden;
+			padding-top: 10px;
 		}
 
 		footer {
@@ -34,9 +36,85 @@
 			padding: 10px;
 			margin:-2px 0 0 -2px;
 		}
+
+		.impostor-image {
+			animation: amogus 1000s infinite linear;
+		}
 		
 		.article {
 			text-align:left;
+		}
+
+		.leftRight {
+			animation: left2Right 20s infinite linear;
+		}
+
+		.rightLeft {
+			animation: right2Left 20s infinite linear;
+		}
+		
+		.video {
+			animation: rickRoll 10s infinite linear;
+		}
+		
+		@keyframes rickRoll {
+			0% {
+				transform: translateX(0vw);
+				scale: 1;
+			}
+			25% {
+				transform: translateX(50vw);
+				scale: -1;
+			}
+			50% {
+				transform: translateX(100vw);
+				scale: 1;
+			}
+			75% {
+				transform: translateX(50vw);
+				scale: -1;
+			}
+			100% {
+				transform: translateX(0vw);
+				scale: 1;
+			}
+		}
+
+		@keyframes left2Right {
+			0% {
+				transform: translateX(-50vw);
+			}
+			25% {
+				transform: translateX(0vw);
+			}
+			50% {
+				transform: translateX(50vw);
+			}
+			75% {
+				transform: translateX(100vw);
+			}
+			100% {
+				transform: translateX(150vw);
+			}
+		}
+
+		@keyframes right2Left {
+			0% {
+				transform: translateX(150vw);
+			}
+			25% {
+				transform: translateX(100vw);
+			}
+			50% {
+				transform: translateX(50vw);
+			}
+			75% {
+				transform: translateX(0vw);
+			}
+			100% {
+				
+				transform: translateX(-50vw);
+			}
 		}
 
 		/* Bootstrap: small */
@@ -52,6 +130,24 @@
 				margin:0 -2px -2px 0;
 			}
 		}
+
+		@keyframes amogus {
+			0% {
+				transform: rotateZ(0deg);
+			}
+			25% {
+				transform: rotateZ(90deg);
+			}
+			50% {
+				transform: rotateZ(180deg);
+			}
+			75% {
+				transform: rotateZ(270deg);
+			}
+			100% {
+				transform: rotateZ(360deg);
+			}
+		}
 		</style>
 	</head>
 
@@ -62,7 +158,7 @@
 			<div class="col-md-4 gurke" style="background-color: rgb(239, 228, 176);">
 				<h1>Cringe CEO</h1>
 				<a href="https://nsfw.cringe-studios.com/Ecchi.png" >
-					<img src="https://nsfw.cringe-studios.com/arrayser.webp" alt="Picture of the Cringe CEO" width="50%" style="border-radius: 50%;" />
+					<img class="impostor-image" src="https://nsfw.cringe-studios.com/arrayser.webp" alt="Picture of the Cringe CEO" width="50%" style="border-radius: 50%;" />
 				</a><br />
 				<br />
 				<div class="article">
@@ -82,7 +178,7 @@
 			</div>
 			<div class="col-md-4 gurke" style="background-color: rgb(152, 255, 152);">
 				<h1>Kölian</h1>
-				<img src="https://nsfw.cringe-studios.com/mrletsplay.webp" alt="JulianA" width="50%" style="border-radius: 50%;" /><br />
+				<img class="impostor-image" src="https://nsfw.cringe-studios.com/mrletsplay.webp" alt="JulianA" width="50%" style="border-radius: 50%;" /><br />
 				<br />
 				<div class="article">
 					<p>Alias: <b><code>MrLetsplay</code></b></p>
@@ -92,7 +188,7 @@
 			</div>
 			<div class="col-md-4 gurke" style="background-color:rgb(236, 173, 173)">
 				<h1>Bolbert</h1>
-				<img src="https://nsfw.cringe-studios.com/blobert.webp" alt="JulianB" width="50%" style="border-radius: 50%;" /><br />
+				<img class="impostor-image" src="https://nsfw.cringe-studios.com/blobert.webp" alt="JulianB" width="50%" style="border-radius: 50%;" /><br />
 				<br />
 				<div class="article">
 					<p>Alias: <b><code>Blobert</code></b></p>
@@ -106,7 +202,7 @@
 	<br/>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 leftRight">
 				<div class="article">
 					<h1>Projects</h1>
 					<b>Cringe Studios Github: <a href="https://github.com/CringeStudios" target="_blank">Cringe Studios;</a></b>
@@ -124,7 +220,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 rightLeft">
 				<div class="article">
 					<h1>Honorable Mentions</h1>
 					<ul>
@@ -136,7 +232,12 @@
 					</ul>
 				</div>
 			</div>	
-		</div>	
+		</div>
+	</div>
+	<div class="container">
+		<div class="row video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
 	</div>
 	<footer>
 		&copy; Cringe Studios

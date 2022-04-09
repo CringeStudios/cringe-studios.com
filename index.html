@@ -54,29 +54,13 @@
 		}
 		
 		.video {
-			animation: rickRoll 10s infinite linear;
+			animation: rickRoll 1s infinite ease;
 		}
 		
 		@keyframes rickRoll {
-			0% {
-				transform: translateX(0vw);
-				scale: 1;
-			}
-			25% {
-				transform: translateX(50vw);
-				scale: -1;
-			}
 			50% {
-				transform: translateX(100vw);
-				scale: 1;
-			}
-			75% {
-				transform: translateX(50vw);
-				scale: -1;
-			}
-			100% {
-				transform: translateX(0vw);
-				scale: 1;
+				transform: translateX(calc(100% - 560px));
+
 			}
 		}
 

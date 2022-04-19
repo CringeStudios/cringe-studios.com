@@ -70,6 +70,17 @@
 			max-width: 100%;
 		}
 		
+		.blinking {
+			animation: blink 1s infinite linear;
+		}
+
+		@keyframes blink {
+			50% {
+				background-color:yellow; 
+				color:red;
+			}
+		}
+
 		@keyframes rickRoll {
 			50% {
 				transform: translateX(calc(100% - 560px));
@@ -286,7 +297,7 @@
 			</div>
 		</div>
 	</div>
-	<h6><b style="background-color:red; color:yellow;">This site has been visited <?php include("visitor_counter.php"); echo IncrementCounter(); ?> times</b></h6>
+	<h6><b class="blinking" style="background-color:red; color:yellow">This site has been visited <?php include("visitor_counter.php"); echo IncrementCounter(); ?> times</b></h6>
 	<footer>
 		&copy; Cringe Studios
 	</footer>

@@ -16,6 +16,23 @@
 				color: red;
 				animation: blink 1s infinite linear;
 				display: inline;
+				font-size: 50px;
+				font-weight: bold;
+			}
+
+			img {
+				margin: 25px;
+				border: 10px solid white;
+				animation: blinkImg 1s infinite linear;
+			}
+
+			span {
+			}
+
+			@keyframes blinkImg {
+				50% {
+					border: 10px solid red;
+				}
 			}
 
 			@keyframes blink {
@@ -41,7 +58,7 @@
 
 		if(empty($username) || empty($password) || empty($allowedUsers[$username]) || $password != $allowedUsers[$username]) {
 			header("HTTP/1.1 418 I'm a teapot");
-			echo "<h1 class=\"blinking\">Your access to the Matrix has been denied</h1>";
+			echo "<span class=\"blinking\">Your access to the Matrix has been denied</span><br><img src=\"https://nsfw.cringe-studios.com/securety.webp\" />";
 			die();
 		}
 	?>

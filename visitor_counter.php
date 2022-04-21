@@ -3,31 +3,39 @@
 define("COUNTER_START_VALUE", 0);
 define("COUNTER_LOG", "visit_counter.log"); //name of file you want to use to save the counter value
 
-/*************************************************************************************************/
-function IncrementCounter() 
-{   
-   $create_file = !file_exists(COUNTER_LOG);
+function getCounter() {
+	if(!file_exists(COUNTER_LOG)) return str_pad(COUNTER_START_VALUE, 9, '0', STR_PAD_LEFT);
 
-   if( !($fh = fopen(COUNTER_LOG, $create_file ? "x+b" : "r+b")) )
-      return "Error";       
-   //do an flock here, maybe, I don't know :-)
+	if(!($fh = fopen(COUNTER_LOG, $create_file ? "x+b" : "r+b"))) return "Error";
+	//do an flock here, maybe, I don't know :-)
 
-   //Reading current value of counter:
-   if($create_file)
-      $count = COUNTER_START_VALUE;
-   else
-   {
-      $count = (int)fread($fh, 9); //reads 9 digits (supposing max 1 billion count)   
-      rewind($fh);
-   }
+	//Reading current value of counter:
+	$count = (int)fread($fh, 9); //reads 9 digits (supposing max 1 billion count)
 
-   //Writing new counter value:
-   if(!fwrite($fh, ++$count))
-      return "Error";
-   if(!fclose($fh))
-      return "Error";       
+	if(!fclose($fh)) return "Error";
 
-   return str_pad($count, 9, '0', STR_PAD_LEFT);
+	return str_pad($count, 9, '0', STR_PAD_LEFT);
+}
+
+function incrementCounter() {
+	$create_file = !file_exists(COUNTER_LOG);
+
+	if(!($fh = fopen(COUNTER_LOG, $create_file ? "x+b" : "r+b"))) return "Error";
+	//do an flock here, maybe, I don't know :-)
+
+	//Reading current value of counter:
+	if($create_file){
+		$count = COUNTER_START_VALUE;
+	}else{
+		$count = (int)fread($fh, 9); //reads 9 digits (supposing max 1 billion count)
+		rewind($fh);
+	}
+
+	//Writing new counter value:
+	if(!fwrite($fh, ++$count)) return "Error";
+	if(!fclose($fh)) return "Error";
+
+	return "Success";
 }
 
 ?>

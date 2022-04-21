@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Matrix</title>
+		<link rel="icon" href="https://nsfw.cringe-studios.com/console.svg">
+		<style>
+			body {
+				font-family: 'Courier';
+				text-align: center;
+			}
+
+			.blinking {
+				text-align: center;
+				width: max-content;
+				color: red;
+				animation: blink 1s infinite linear;
+				display: inline;
+			}
+
+			@keyframes blink {
+				50% {
+					background-color:red; 
+					color:white;
+				}
+			}
+		</style>
+	</head>
+
+	<?php
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		
+		$allowedUsers = array(
+			"sus" => "sus",
+			"RedPill" => "giveMe",
+			"admin" => "admin",
+			"cringe" => "123"
+		);
+
+
+		if(empty($username) || empty($password) || empty($allowedUsers[$username]) || $password != $allowedUsers[$username]) {
+			header("HTTP/1.1 418 I'm a teapot");
+			echo "<h1 class=\"blinking\">Your access to the Matrix has been denied</h1>";
+			die();
+		}
+	?>
+	
+	<body style="margin: 0; overflow:hidden; background-color:black;">
+		<canvas width="auto" height="auto" id="canvas"></canvas>
+		<script src="matrix.js"></script>
+	</body>
+</html>

@@ -37,6 +37,11 @@
 			text-align: left;
 			font-size: 50%;
 		}
+
+		button {
+			background-color: pink;
+			border-radius: 5px;
+		}
 		
 		.gurke {
 			border: 2px solid black;
@@ -68,15 +73,19 @@
 			/*animation: rickRoll 1s infinite ease;*/
 			animation: amogus 10s infinite linear;
 			max-width: 100%;
+			margin-top: 175px;
+			margin-bottom: 175px;
+		}
+
+		iframe {
+			background: url("https://nsfw.cringe-studios.com/wtf.png"), linear-gradient(rgb(255,0,0), rgb(0,255,0));
 		}
 
 		.blinking {
 			animation: blink 1s infinite linear;
 		}
 
-		iframe {
-			background: url("https://nsfw.cringe-studios.com/wtf.png"), linear-gradient(rgb(255,0,0), rgb(0,255,0));
-		}
+		
 
 		@keyframes blink {
 			50% {
@@ -166,7 +175,9 @@
 			100% {
 				transform: rotateZ(360deg);
 			}
+
 		}
+
 		</style>
 	</head>
 
@@ -286,29 +297,26 @@
 				<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col">	
-				<form action="index.php" method="post">
-					<label for="fName">First Name</label><br />
-					<input type="text" name="fName" /><br />
-					<label for="lName">Last Name</label><br />
-					<input type="text" name="lName" /><br />
-					<input type="submit" style="margin:5px"/>
-				</form>
-			</div>
+		<div class="row justify-content-center" style="margin:20px">
+			<form action="matrix" method="post" style="border:1px solid black">
+				<input type="text" name="username" placeholder="Username" style="margin:10px" /><br>
+				<input type="text" name="password" placeholder="Password" style="margin:10px" /><br>
+				<input type="submit" value="login" style="margin:10px" />
+			</form>
+		</div>
+		<div class="row justify-content-center">
+			<b class="blinking" style="background-color:red; color:yellow;text-align:center">This site has been visited <?php include("visitor_counter.php"); echo getCounter(); ?> times (<span id="visited-self"></span> times by you)</b>
 		</div>
 	</div>
 <!--
 	<iframe id="cringe-frame" title="Recursion" src="https://cringe-studios.com/?poop" style="width:100%; height:800px; border:0px"></iframe>
 -->
-	<h6><b class="blinking" style="background-color:red; color:yellow">This site has been visited <?php include("visitor_counter.php"); echo IncrementCounter(); ?> times</b></h6>
-<!--	<footer>
+
+	<footer>
 		&copy; Cringe Studios
 	</footer>
 
-	<script>
+<!--	<script>
 		let search = window.location.search;
 		let q = search != "" ? parseInt(search.substring(1)) : 0;
 		if(q <= 20) {
@@ -317,5 +325,32 @@
 		}
 	</script>
 -->
-</body>
+
+	<script>
+		window.sus = () => console.log("You are sus");
+
+		function visited() {
+			// Count visit
+			let xhr = new XMLHttpRequest();
+			xhr.open("GET", "/visited.php");
+			xhr.send();
+		}
+		
+		let lastVisited = window.localStorage.lastVisited;
+		if(lastVisited == null) {
+			window.localStorage.lastVisited = new Date().getTime();
+			window.localStorage.visitCounter = 1;
+			visited();
+		}else {
+			let diff =  new Date().getTime() - lastVisited;
+			if(diff > 2000) {
+				window.localStorage.lastVisited = new Date().getTime();
+				window.localStorage.visitCounter++;
+				visited();
+			}
+		}
+
+		document.getElementById("visited-self").innerText = window.localStorage.visitCounter;
+	</script>
+	</body>
 </html>

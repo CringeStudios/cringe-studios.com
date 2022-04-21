@@ -1,6 +1,7 @@
 RewriteEngine On
 
 RewriteRule ^sus$ sus.html [NC]
+RewriteRule ^matrix$ matrix.html [NC]
 RewriteRule ^／$ sus.html [NC]
 RewriteRule ^／᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼᲼sus$ sus.html [NC]
 RewriteRule ^🆘$ sus.html [NC]

@@ -1,0 +1,102 @@
+{
+	"What is the correct tag for the largest heading in HTML?": ["<h1>"],
+	"What are semantic HTML elements?": ["Elements with meanings which allow a reader of the document to understand the meaning of the element"],
+	"The class attribute is defined as following:": ["class=\"name\""],
+	"The class Attribute is used to devide different  into logical groups": ["elements"],
+	"What is the \"alt\" - Attribute for?": [
+		"It is used to display information about an element when the content cannot be displayed or loaded by the browser.", 
+		"Disabled people can access the information of an element, which they wouldn't be able to understand due to their disabilities."
+	],
+	"The classname is": ["case sensitive"],
+	"Link the positions to corresponding persons.": {
+		"Who is W3C CEO?": "Jeffrey Jaffe",
+		"Who is W3C director?": "Who is W3C director?"
+	},
+	"An iframe is an element which is used to display a webpage within a web page. Is this statement true or false?": ["True"],
+	"URLs are used to define the  to a destination site or to a ressource needed in the HTML file.": ["path"],
+	"What is the charset meta declaration used for?": ["It defines the character encoding of a document so that the browser can interpret it properly."],
+	"Choose how ids are referenced in CSS.": ["#idname"],
+	"Which of the following statements are true?": [
+		"With Javascript you can create new elements.",
+		"You can include a Javascript file at the end of the HTML body.",
+		"With the <noscript> tag you provide alternate content for users who disabled Javascript",
+		"The code document.getElementById(\"demo\").innterHTML = \"Hello JavaScript!\"; selects an element with the name \"demo\" and changes its text to \"Hello Javascript\"",
+		"Javascript can be used to change the css of an element."
+	],
+	"In some cases IDs should be used more than once. Is this statement true or false?": ["False"],
+	"An inline CSS is used to apply a unique style to  HTML element.\nAn internal CSS is used to define a style for  HTML .\nAn external style sheet is used to define the style for  HTML .": [
+		"a single", "element", "a single", "a page", "many", "pages"
+	],
+	"Who develops the different standards for the Open Web Platform?": ["W3 Consortium (W3C)"],
+	"Who is responsible for HTML standards?": ["W3 Consortium (W3C)"],
+	"What does the abbreviation CSS mean?": ["Cascading Style Sheets"],
+	"What is the &nbsp; entity for?": ["Introduces a non-breaking space."],
+	"In HTML each element must have an ID. Is this statement true or false?": ["False"],
+	"What is new in HTML5? Select all corresponding answers.": [
+		"New multimedia element <audio>",
+		"New semantic elements like <header>, <footer>, <article>, and <section>.",
+		"New types for form input elements like time and date.",
+		"New multimedia element <video>",
+		"New types for form input elements like number.",
+		"New graphic elements: <svg> and <canvas>."
+	],
+	"An HTML page can have  id(s) applied to one specific element, while a class name can be applied to  elements.": ["one unique", "multiple"],
+	"An HTML page can have one unique id(s) applied to one specific element, while a class name can be applied to multiple elements.": ["False"],
+	"Match the tags to the fitting type.\n<ol>, <table>, <ul>  \n<style>  \n<i>, <strong>, <b>  ": ["block elements", " CSS formatting", "text formatting"],
+	"What is the basic syntax of HTML tags that need one attribute?": ["<tagName attributeName=\"value\">content</tagName>"],
+	"What does the abbreviation HTML mean?": ["Hyper Text Markup Language"],
+	"What do you need as a preparation for coding HTML?": [
+		"A basic texteditor or an IDE.",
+		"A computer or a similar input device.",
+		"A webbrowser to display the results."
+	],
+	"What is the latest and recommended HTML5 version number?": ["HTML 5.2"],
+	"The form-handler is typically a server page with a script for processing input data. Is this statement true or false?": ["True"],
+	"Select all valid HTML elements.": [
+		"<a>",
+		"<abbr>",
+		"<h4>",
+		"<em>",
+		"<del>",
+		"<bdo>"
+	],
+	"Which attribute opens the action url in a new browser tab?": ["target=\"_blank\""],
+	"The  Method is used to transfer form input which is sensitive and shouldn't be displayed open.\nThe  Method is used to transfer form input in plaintext over the URL.": ["POST", "GET"],
+	"What is the correct tag for a line break in HTML?": ["<br>"],
+	"Select all statements which are true about the HTML canvas tag.": [
+		"You must use JavaScript to actually draw the graphics.",
+		"The HTML <canvas> elements is used to draw graphics",
+		"The code\nvar c = document.getElementById(\"myCanvas\");\nvar ctx = c.getContext(\"2d\");\nctx.beginPath();\nctx.arc(95,50,30,0,2*Math.PI);\nctx.stroke\ndraws a circle",
+		"The <canvas> element is only a container for graphics.",
+		"By default, a canvas has no border and no content."	
+	],
+	"The HTML <body> element is used to store <style> and <link> elements. Is this statement true or false?": ["False"],
+	"Select all elements which should be in the head tag.": ["<title>", "<meta>", "<style>", "<link>"],
+	"Combine the tags to their purpose.": {
+		"<var>": "various text",
+		"<pre>": "preformated text",
+		"<code>": "used for program code",
+		"<kbd>": "denotes keyboard input",
+		"<samp>": "used for sample computer output"	
+	},
+	"Select all contributions which contribute to an elements bounding box (pixel size) in the box model.": ["Height", "Width", "Border", "Padding"],
+	"The title tag specifies additional information about an element, which is often shown as a tooltip when the mouse moves over an element. Is this statement true or false?": [
+		"False"
+	],
+	"Choose 3 ways to specify a color in HTML or CSS.": [
+		"style=\"color:green\"",
+		"style=\"color:#ff6347\"",
+		"style=\"color:rgb(255, 99, 71)\""
+	],
+	"By whom Web Standards are made?": ["W3C", "World Wide Web Consortium"],
+	"How does the definition of the doctype of an HTML5 document look like?": ["<!DOCTYPE html>"],
+	"XHTML is a combination of the strength of both XML and HTML to allow browser to interpret the document more efficiently. Is this statement true or false?": ["True"],
+	"Select the right expression to introduce a special character using its entity number in your HTML code.": ["&#"],
+	"How a CSS class may be used?": [".classname"],
+	"Which input type does not exist?": [
+		"textfield",
+		"key",
+		"age",
+		"picture"
+	]
+}

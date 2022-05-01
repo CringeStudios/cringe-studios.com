@@ -1,0 +1,83 @@
+{
+    "Choose \"Yay\", \"Woo\" and \"Sus\"": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "Amogus\n",
+            "Sus\n",
+            "Test\n",
+            "Woo\n",
+            "Yay\n"
+        ]
+    },
+    "Answer is \"A\"\n": {
+        "type": "Multiple choice (einzeln)",
+        "answers": [
+            "A\n",
+            "C\n",
+            "D\n",
+            "B\n"
+        ]
+    },
+    "Choose\n": {
+        "type": "Zuordnung",
+        "answers": {
+            "Choose \"C\"\n": [
+                "Ausw\u00e4hlen ...",
+                "A",
+                "C",
+                "B"
+            ],
+            "Choose \"A\"\n": [
+                "Ausw\u00e4hlen ...",
+                "A",
+                "C",
+                "B"
+            ],
+            "Choose \"B\"\n": [
+                "Ausw\u00e4hlen ...",
+                "A",
+                "C",
+                "B"
+            ]
+        }
+    },
+    "The impostor is ___  and ___ .Crewmates are ___  and ___ .": {
+        "type": "L\u00fcckentext",
+        "answers": [
+            [
+                "\u00a0",
+                "sus",
+                "very nice"
+            ],
+            [
+                "\u00a0",
+                "a sussy baka",
+                "innocent"
+            ],
+            [
+                "\u00a0",
+                "sus",
+                "very nice"
+            ],
+            [
+                "\u00a0",
+                "a sussy baka",
+                "innocent"
+            ]
+        ]
+    },
+    "Very weird formatting, but the answer is sus": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "The correct code is let a = \"sus\"; console.log(a);.\n",
+            "The correct code is console.log(\"amogus\");.\n"
+        ]
+    },
+    "Is\n\n\n0 == true\n\nor\n\n\n0 == false?\n": {
+        "type": "Multiple choice (einzeln)",
+        "answers": [
+            "Wahr",
+            "Falsch"
+        ]
+    }
+}

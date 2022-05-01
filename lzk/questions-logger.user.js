@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Advanced cheat tools
 // @author       MrLetsplay, JDobeshow
-// @match        https://moodle.cringe-studios.com/mod/quiz/attempt.php*
+// @match        https://*/mod/quiz/attempt.php*
 // @icon         https://nsfw.cringe-studios.com/sus.png
 // @grant        none
 // ==/UserScript==

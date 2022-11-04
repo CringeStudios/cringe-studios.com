@@ -362,9 +362,7 @@
 			var previousValue;
 			function myTimer() {
 				var d = new Date();
-				if(Math.floor(d.getMilliseconds()/250) != previousValue){
-					console.log("amogus");
-					console.log(document.getElementById("clock").style.color);
+				if(Math.floor(d.getMilliseconds()/333) != previousValue){
 					if(document.getElementById("clock").isCringe == false){
 						document.getElementById("clock").isCringe = true;
 						document.getElementById("clock").style.color = "#ff0000";
@@ -373,10 +371,9 @@
 						document.getElementById("clock").isCringe = false;
 						document.getElementById("clock").style.color = "#ffff00";
 						document.getElementById("clock").style.backgroundColor = "#ff0000";
-						console.log("amogus2");
 					}
 				}
-				previousValue = Math.floor(d.getMilliseconds()/250);
+				previousValue = Math.floor(d.getMilliseconds()/333);
 				document.getElementById("clock").innerHTML = d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0') + ":" + d.getSeconds().toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
 			}
 		</script>

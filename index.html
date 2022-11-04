@@ -306,7 +306,7 @@
 			</form>
 		</div>
 		<div class="row justify-content-center">
-			<b class="blinking" style="background-color:red; color:yellow;text-align:center">This site has been visited <?php include("visitor_counter.php"); echo getCounter(); ?> times (<span id="visited-self"></span> times by you)</b>
+			<b class="blinking" style="background-color:red; color:yellow;text-align:center">This site has been visited 000014313 times (<span id="visited-self"></span> times by you)</b>
 		</div>
 	</div>
 <!--
@@ -353,5 +353,33 @@
 
 		document.getElementById("visited-self").innerText = window.localStorage.visitCounter;
 	</script>
+	<div style="position:fixed;top:10px;left:10px; font-size: 7vh; border:1vh solid #ff0000">
+		<div id="clock" style="font-weight: bold; color:#ffff00; background-color: rgb(255,0,0);">
+			Amogus
+		</div>
+		<script>
+			var myVar = setInterval(function() {myTimer();}, 10);
+			var previousValue;
+			function myTimer() {
+				var d = new Date();
+				if(Math.floor(d.getMilliseconds()/250) != previousValue){
+					console.log("amogus");
+					console.log(document.getElementById("clock").style.color);
+					if(document.getElementById("clock").isCringe == false){
+						document.getElementById("clock").isCringe = true;
+						document.getElementById("clock").style.color = "#ff0000";
+						document.getElementById("clock").style.backgroundColor = "#ffff00";
+					}else{
+						document.getElementById("clock").isCringe = false;
+						document.getElementById("clock").style.color = "#ffff00";
+						document.getElementById("clock").style.backgroundColor = "#ff0000";
+						console.log("amogus2");
+					}
+				}
+				previousValue = Math.floor(d.getMilliseconds()/250);
+				document.getElementById("clock").innerHTML = d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0') + ":" + d.getSeconds().toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
+			}
+		</script>
+	</div>
 	</body>
 </html>

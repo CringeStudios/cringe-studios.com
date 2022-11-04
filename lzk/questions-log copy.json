@@ -1,0 +1,107 @@
+{
+    "Welche Aussage(n) ist\/sind f\u00fcr JavaScript richtig?\n\n\n": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "a. JavaScript wird von einem Interpreter ausgef\u00fchrt, es gibt keinen JavaScript-Compiler.",
+            "b. JavaScript ist eine Implementation des EAMC Skriptsprachen Standards."
+        ]
+    },
+    "Welche Aussage(n) ist\/sind f\u00fcr AJAX richtig?\n\n\n": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "a. AJAX == Asynchronous Java and XML.",
+            "b. AJAX unterst\u00fctzt den Datenaustausch mit einem Server und die Teile einer Webseite auszutauschen, ohne die gesamte Seite neu zu laden.",
+            "c. AJAX\u2013Anwendungen sind abh\u00e4ngig von Browser und Plattform."
+        ]
+    },
+    "Welche Aussagen sind f\u00fcr das HTML Docoment Object Model zutreffend ? Kreuzen Sie alle richtigen Antworten an !\n": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "a. Das HTML DOM ist ein JavaScript-Standard um HTML-Elemente zu modifizieren.",
+            "b. Das HTML DOM ist ein Standard um HTML-Elemente zu lesen, \u00e4ndern, hinzuzuf\u00fcgen und zu l\u00f6schen.",
+            "c. Das HTML DOM ist das Root-Objekt f\u00fcr die Objekte und Eigenschaften aller HTML-Elemente des Dokuments.",
+            "d.\nDas HTML DOM definiert die Objekte und Eigenschaften aller HTML-Elemente des Dokuments und Methoden, um auf diese zuzugreifen."
+        ]
+    },
+    "Answer is \"A\"\n": {
+        "type": "Multiple choice (einzeln)",
+        "answers": [
+            "A\n",
+            "D\n",
+            "C\n",
+            "B\n"
+        ]
+    },
+    "Is\n\n\n0 == true\n\nor\n\n\n0 == false?\n": {
+        "type": "Multiple choice (einzeln)",
+        "answers": [
+            "Wahr",
+            "Falsch"
+        ]
+    },
+    "Choose\n": {
+        "type": "Zuordnung",
+        "answers": {
+            "Choose \"C\"\n": [
+                "Ausw\u00e4hlen ...",
+                "B",
+                "C",
+                "A"
+            ],
+            "Choose \"A\"\n": [
+                "Ausw\u00e4hlen ...",
+                "B",
+                "C",
+                "A"
+            ],
+            "Choose \"B\"\n": [
+                "Ausw\u00e4hlen ...",
+                "B",
+                "C",
+                "A"
+            ]
+        }
+    },
+    "The impostor is ___  and ___ .Crewmates are ___  and ___ .": {
+        "type": "L\u00fcckentext",
+        "answers": [
+            [
+                "\u00a0",
+                "very nice",
+                "sus"
+            ],
+            [
+                "\u00a0",
+                "a sussy baka",
+                "innocent"
+            ],
+            [
+                "\u00a0",
+                "very nice",
+                "sus"
+            ],
+            [
+                "\u00a0",
+                "a sussy baka",
+                "innocent"
+            ]
+        ]
+    },
+    "Choose \"Yay\", \"Woo\" and \"Sus\"": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "Sus\n",
+            "Yay\n",
+            "Woo\n",
+            "Test\n",
+            "Amogus\n"
+        ]
+    },
+    "Very weird formatting, but the answer is sus": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "The correct code is let a = \"sus\"; console.log(a);.\n",
+            "The correct code is console.log(\"amogus\");.\n"
+        ]
+    }
+}

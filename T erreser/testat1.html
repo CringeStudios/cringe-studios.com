@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta title="Weather Data">
+	<style>
+	li{display:inline-block;list-style-type:none; margin-right:10%; margin-left:10%;}
+	body{padding:0px; background-color:yellow;margin:0px;font-family: Courier; text-align:center;}
+	.fixed{padding:20px;width:100%;position:fixed;margin:0px}
+	header{border-bottom-style:solid; background-color:Red; top:0;}
+	footer{border-top-style:solid;background-color:blue;bottom:0;}
+	button{cursor: not-allowed; opacity: 0.6;border:none; border-radius:25px; padding:16px 32px; display:inline-block;text-decoration:none;text-align:center;background-color:Gainsboro;  -webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
+	button:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);}
+	/*cursor:pointer;*/
+	.hor-center{width: 100%; height:100%;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); }
+	.center{position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); }
+	.left-center{position:absolute;top: 50%;-ms-transform: translate(0%, -50%);transform: translate(0%, -50%); }
+	.left{width:15%;height:100%;position:absolute;background-color:Orange;border-right-style:solid;}
+/*	nav{position:absolute; left:0%;}*/
+	.text_left{text-align:left;}
+	.text_right{text-align:right;padding-right:10%}
+	.th{/*margin-right:20%;*/ background-color:turquoise; border-style: double solid solid double; border-radius: 5px; padding: 2px}
+	article{border-radius:5px; border-style: double solid solid double; cursor:wait; background-color: Lime; padding: 2px}
+	</style>
+	<script src="./testat1.js">
+
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+
+</head>
+<body>
+	
+	<div>
+	<div class="left">
+		<div class="left-center">
+			<nav style="text-align:right;"> Navigation:
+				<ul style= "text-align:right;">
+					<li style="text-align:left; margin-right:0%; margin: 2%;"><a href="https://www.hof-university.de">Hofschule Hoch</a></li>
+					<li style="text-align:left; margin-right:0%; margin: 2%;"><a href="https://moodle.hof-university.de">Moodle</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<header class="fixed"><h1 style="color:blue;">DAS WETTER IN HOF</h1></header>
+	<section class="center">
+		<div>
+		<table>
+			<tr><th class ="text_right"><div class="th">Attribut</div></th><th class ="text_left"><div class = "th">Wert</div></th></tr>
+			<tr><td class="text_right"><article>Uhrzeit der Datenmessung</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Temperatur</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Luftfeuchtigkeit</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Luftdruck</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Windgeschwindigkeit</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Windgeschwindigkeit in km/h</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Windrichtung in Grad</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Windrichtung</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Sonneneinstrahlung</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Niederschlag</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Temperatur der Erde</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+			<tr><td class="text_right"><article>Feuchtigkeit der Erde</article></td><td class ="text_left"><article>Loading...</article></td></tr>
+		</table>
+		</div>
+	</section>
+	</div>
+	<footer class="fixed">
+		<ul>
+		<li><button onclick="toggleHeaderVisibility();">Toggle V</button></li>
+		<li><button onclick="makeArticlesInvisible();">Hide Article</button></li>
+		<li><button onclick="makeArticlesVisible();">Show Hidden Article</button></li>
+		</ul>
+	</footer>
+	<script>
+		bottomFunction();
+	</script>
+</body>
+</html>

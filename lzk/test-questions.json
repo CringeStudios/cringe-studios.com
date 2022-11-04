@@ -4,5 +4,8 @@
 	"Is\n\n\n0 == true\n\nor\n\n\n0 == false?": ["Falsch"],
 	"The impostor is  and  .\n\nCrewmates are  and  .": ["sus", "a sussy baka", "very nice", "innocent"],
 	"Very weird formatting, but the answer is sus": ["The correct code is let a = \"sus\"; console.log(a);."],
-	"Choose": {"Choose \"A\"": "A", "Choose \"B\"": "B", "Choose \"C\"": "C"}
+	"Choose": {"Choose \"A\"": "A", "Choose \"B\"": "B", "Choose \"C\"": "C"},
+	"Test3": "A",
+	"Test": "A",
+	"Test2": "Who cares?"
 }

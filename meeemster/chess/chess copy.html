@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<style>
+			body {
+				background-color: #222;
+				color: white;
+				user-select: none;
+			}
+
+			#chessboard {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+				width: 80vmin;
+				height: 80vmin;
+				border: 10px solid gray;
+			}
+
+			.chess-container {
+				display: flex;
+				justify-content: center;
+			}
+
+			.white {
+				background-color: white;
+			}
+
+			.black {
+				background-color: black;
+			}
+
+			.black, .white {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.black > img, .white > img {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>sussy amogus chess edition</h1>
+			<nav>
+				<a href="#!chess">A</a>
+				<a href="#!two">B</a>
+				<a href="#!three">C</a>
+			</nav>
+		</header>
+		<section>
+			<div ng-controller="GreetingController" class="chess-container">
+				<div id="chessboard">
+
+				</div>
+			</div>
+		</section>
+		<footer>
+			chess end. yay
+		</footer>
+		<script>
+			let board = document.getElementById("chessboard");
+			let PAWN = "pawn";
+			let KING = "king";
+			let TEXTURES = {
+				pawn: {w: "amoguspawnw.png", b: "amoguspawnb.png"},
+				king: {w: "amoguskingw.png", b: "amoguskingb.png"}
+			}
+
+			let chessfields = [];
+
+			function getPiece(element) {
+				let field = parseInt(element.getAttribute("data-field"));
+				let x = field % 8;
+				let y = Math.floor(field / 8);
+				let pieceBlack = element.getAttribute("data-pieceBlack") == "true";
+				let type = element.getAttribute("data-pieceType");
+				return {
+					type: type,
+					field: field,
+					x: x,
+					y: y,
+					black: pieceBlack
+				}
+			}
+
+			function getPieceAt(x, y) {
+				let field = y * 8 + x;
+				if(field < 0 || field > 63) return null;
+				let fieldEl = chessfields[field];
+				return fieldEl.children.length == 0 ? null : getPiece(fieldEl.children[0]);
+			}
+
+			for(let i = 0; i < 64; i++) {
+				let field = document.createElement("div");
+				let x = i % 8;
+				let y = Math.floor(i / 8);
+				if(x % 2 == 0 ^ y % 2 == 0) {
+					field.classList.add("black");
+				}else {
+					field.classList.add("white");
+				}
+
+				field.ondragover = function(e) {
+					let piece = e.dataTransfer.getData("piece");
+					if(piece == null) return;
+					let thePiece = document.getElementById(piece);
+					let pieceObj = getPiece(thePiece);
+
+					let pieceOnField = field.children.length != 0;
+
+					switch(pieceObj.type) {
+						case KING:
+							if(Math.abs(x - pieceObj.x) > 1) return;
+							if(Math.abs(y - pieceObj.y) > 1) return;
+
+							for(let dx = -1; dx <= 1; dx++) {
+								for(let dy = -1; dy <= 1; dy++) {
+									let p = getPieceAt(x + dx, y + dy);
+									if(p != null && p.type == KING && p.black != pieceObj.black) return;
+								}
+							}
+							break;
+						case PAWN:
+							if(Math.abs(x - pieceObj.x) > 1) return;
+							if((x - pieceObj.x == 0) == pieceOnField) return;
+							if(y - pieceObj.y != (pieceObj.black ? 1 : -1)) return;
+							break;
+					}
+
+					if(pieceOnField){
+						let otherPieceObj = getPiece(field.children[0]);
+						if(pieceObj.black != otherPieceObj.black) {
+							field.style.backgroundColor = "red";
+							e.preventDefault();
+							return;
+						}
+						return;
+					}
+
+					field.style.backgroundColor = "green";
+					e.preventDefault();
+				}
+
+				field.ondragleave = function(e) {
+					field.style.backgroundColor = null;
+				}
+
+				field.ondrop = function(e) {
+					e.preventDefault();
+					let piece = e.dataTransfer.getData("piece");
+					if(piece == null) return;
+					field.style.backgroundColor = null;
+					let thePiece = document.getElementById(piece);
+					thePiece.setAttribute("data-field", i);
+					if(field.children.length != 0) field.children[0].remove();
+					field.appendChild(thePiece);
+				}
+
+				board.appendChild(field);
+				chessfields.push(field);
+			}
+
+			let pieces = [
+				{type: PAWN, black: true},
+				{type: PAWN, black: false},
+				{type: KING, black: true},
+				{type: KING, black: false}
+			];
+
+			for(let p of pieces) {
+				let field;
+
+				outer: while(true) {
+					field = Math.floor(Math.random() * 64);
+					let x = field % 8;
+					let y = Math.floor(field / 8);
+
+					if(chessfields[field].children.length != 0) continue;
+
+					for(let dx = -1; dx <= 1; dx++) {
+						for(let dy = -1; dy <= 1; dy++) {
+							let pc = getPieceAt(x + dx, y + dy);
+							if(pc != null && pc.type == KING && pc.black != p.black) continue outer;
+						}
+					}
+
+					break;
+				}
+
+				let thePiece = document.createElement("img");
+				thePiece.id = "cringe" + Math.random();
+				thePiece.setAttribute("draggable", true);
+				thePiece.src = TEXTURES[p.type][p.black ? "b" : "w"];
+				thePiece.setAttribute("data-pieceType", p.type);
+				thePiece.setAttribute("data-pieceBlack", p.black);
+				thePiece.setAttribute("data-field", field);
+				chessfields[field].appendChild(thePiece);
+				thePiece.ondragstart = function(e) {
+					e.dataTransfer.setData("piece", thePiece.id);
+				};
+			}
+
+			var myApp = angular.module('myApp',[]);
+
+			myApp.controller('GreetingController', ['$scope', function($scope) {
+				$scope.greeting = 'Cringe';
+			}]);
+		</script>
+	</body>
+</html>

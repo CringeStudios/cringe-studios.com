@@ -10,7 +10,7 @@
 	"The classname is": ["case sensitive"],
 	"Link the positions to corresponding persons.": {
 		"Who is W3C CEO?": "Jeffrey Jaffe",
-		"Who is W3C director?": "Who is W3C director?"
+		"Who is W3C director?": "Tim Berners-Lee"
 	},
 	"An iframe is an element which is used to display a webpage within a web page. Is this statement true or false?": ["True"],
 	"URLs are used to define the  to a destination site or to a ressource needed in the HTML file.": ["path"],
@@ -98,5 +98,44 @@
 		"key",
 		"age",
 		"picture"
-	]
+	],
+
+
+	"Welche Aussage(n) ist/sind für JavaScript richtig?": ["JavaScript wird von einem Interpreter ausgeführt, es gibt keinen JavaScript-Compiler."],
+	"Wie werden in JavaScript globale Variablen deklariert?": "x = 5; oder deklaration im globalen Kontext.",
+	"Über welche Methode kann man im HTML-DOM einen neuen Knoten duplizieren?": "cloneNode()",
+	"Wie bezeichnet man einen Knoten im HTML-DOM ohne Kindknoten?": "Blatt Knoten",
+	"Nennen Sie zwei JavaScript-Trigger.": "onFocus, onBlur",
+	"Nennen Sie drei Beispiele für den Einsatz von JavaScript.": "Formvalidierung, dymanische Funktionen, Kommunikation zu einem Server",
+	"Wie heißt der Parentnode des Titel-Knotens eines HTML-DOMs ?": "head",
+	"Wozu benötigt man den JavaScript-Operator \"===\"?": "Vergleich von Attributwert und Datentyp zweier Variablen",
+	"Über welche Methode kann man im HTML-DOM prüfen,ob ein Knoten Kindknoten besitzt ?": "hasChildNodes()",
+	"Durch welches Tag wird der Wurzelknoten eines HTML-Dokuments im HTML-DOM bestimmt ?": "html",
+	"Über welches Attribut im HTML-DOM hat man Zugriff auf alle Attribute eines Elements ?": "attributes",
+	"Über welche Methode kann man im HTML-DOM einen neuen Kindknoten einfügen ?": "appendChild()",
+	"Über welche Eigenschaft kann im HTML DOM kann der Wert des Textknotens manipuliert werden ?": "nodeValue",
+	"Welche Aussage(n) ist/sind für AJAX rightig?": ["AJAX unterstützt den Datenaustausch mit einem Server und die Teile einer Webseite auszutauschen, ohne die gesamte Seite neu zu laden."],
+	"Wie vermeidet man, dass Browser, die kein JavaScript unterstützen, JavaScript als Seiteninhalte darstellen?": "Script in einen HTML-Comment einbetten",
+	"Wie viele Kindknoten darf ein Knoten im HTML-DOM maximal besitzen ?": "es gibt kein Maximum. Beliebig viele",
+	"Benennen Sie alle Childnodes des Wurzelknotens eines HTML-DOMs.": "head und body",
+	"Mit welcher JavaScript-Kontrollstruktur kann man Fallunterscheidungen von mehr als drei Fällen implementieren, ohne if-Blöcke zu nutzen?": "Switch-Statement",
+	"Welche Aussagen sind für das HTML Document Object Model zutreffend ? Kreuzen Sie alle richtigen Antworten !": ["Das HTML DOM ist ein Standard um HTML-Elemente zu lesen, ändern, hinzuzufügen und zu löschen.", "Das HTML DOM definiert die Objekte und Eigenschaften aller HTML-Elemente des Dokuments und Methoden, auf diese zuzugreifen."],
+	"Mit welchem JavaScript-Befehl kann in einem HTML-Dokument einem HTML-Element mit der ID=\"demo\" der Text \"Hallo Welt!\" zugewiesen werden?": "document.getElementById(\"demo\").innerHTML=\"Hallo Welt!\"",
+
+
+	"Welche der nachfolgenden jQuery-Methoden gibt es ?\n": ["jquery.getJSON()", "jquery.getScript()"],
+	"Mit Hilfe eines jQuery-Selektors wurde eine Menge von HTML-Elementen selektiert.\n\n\nMit welcher jQuery-Methode kann man die als Parameter \u00fcbergebenen CSS-Klassen der ausgew\u00e4hlten Elemente setzen bzw. entfernen, je nachdem, ob sie gesetzt waren oder nicht ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": "toggleClass()",
+	"Mit welcher jQuery-Methode kann man die H\u00f6he des ersten ausgew\u00e4hlten Elements setzen bzw. abrufen, wobei Padding (padding) mit ber\u00fccksichtigt werden soll, nicht aber die Randlinie (border) ?\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": "innerHeight()",
+	"Wie lange dauert das jQuery-FadeIn in Millisekunden in der Voreinstellung ?\n": "400",
+	"Welche Aussage(n) ist\/sind im Zusammenhang mit jQuery richtig?\n\n\n": ["JQuery 2.x.x unterstützt nicht mehr Internet Explorer 6, 7 und 8.", "QUnit is a test automation framework used to test the jQuery project.", "JQuery stellt ein browser\u00fcbergreifendes AJAX-API bereit.", "JQuery ist erweiterbar."],
+	"Welche Aussage ist f\u00fcr das nachfolgende jQuery-Schnipsel richtig?\n\nvar hB = $(\"#banner-message\");\n$(\"#container button\").on(\"click\",function( event ){hB.show();});": ["Zeige das #banner-message Element, das mit \"display:none\" versteckt wurde, sobald eine Schaltfl\u00e4che im Element \"#container\" bet\u00e4tigt wird."],
+	"Gegeben sei eine nachfolgende HTML Seite mit einer ungeordneten Liste:\n\n<html>\n<body>\n\n<ul>\n  <li>list item 1<\/li>\n  <li>list item 2<\/li>\n  <li>list item 3<\/li>\n<\/ul>\n<\/body>\n<\/html>\n\n\n\n\nMit dem Selektor $(\"li\") wurden alle Listenelemente selektiert.\n\nMit welcher jQuery-Methode kann man die selektierte Menge auf das erste Listenelement reduzieren ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": ".first()",
+	"Which of the following statements are true about AngularJS ? (Choose all that apply.)": ["Imperative programming is suited to defining an AngularJS application's business logic.", "AngularJS provides a framework for model-view-viewmodel (MVVM) architectures.", "AngularJS provides a framework for client-side model-view-controller (MVC) architectures."],
+	"Which of the following paradigms are true for AngularJS? (Choose all that apply.)": ["Decouple the server side of an application from the client side.", "Decouple view manipulation from application logic."],
+	"Which AngularJS function creates an AngularJS module?": "angular.module()",
+	"Which AngularJS directive binds the value of HTML controls (input, select, textarea) to application data?": ["ng-model"],
+	"Which of the following implementation details are true for AngularJS? (Choose all that apply.)": ["AngularJS uses dependency injection.", "Angular brings server-side services to client-side web applications."],
+	"Which of the following statements are true? (Choose all that apply.)": ["AngularJS lets you use HTML as your template language.", "AngularJS is a structural framework for dynamic web apps."],
+	"Which AngularJS directive binds application data to the innerHTML view?": "ng-bind",
+	"The code shows the implementation of a simple memory game. Copy the code to a local file. Modify the code such that the game area is not 4x4 but only 2x2. Upload your file to be graded!": "lonk:https://cringe-studios.com/lzk/memory.html"
 }

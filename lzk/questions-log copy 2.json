@@ -1,0 +1,44 @@
+{
+    "Welche der nachfolgenden jQuery-Methoden gibt es ?\n": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "a. query.get()",
+            "b. jquery.getText()",
+            "c. jquery.getXML()",
+            "d. jquery.ajaxCompleted()",
+            "e. jquery.getJSON()",
+            "f. jquery.getScript()"
+        ]
+    },
+    "Mit Hilfe eines jQuery-Selektors wurde eine Menge von HTML-Elementen selektiert.\n\n\nMit welcher jQuery-Methode kann man die als Parameter \u00fcbergebenen CSS-Klassen der ausgew\u00e4hlten Elemente setzen bzw. entfernen, je nachdem, ob sie gesetzt waren oder nicht ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": {
+        "type": "Text Input (qtype_pmatch \/ Essay)",
+        "answers": ""
+    },
+    "Mit welcher jQuery-Methode kann man die H\u00f6he des ersten ausgew\u00e4hlten Elements setzen bzw. abrufen, wobei Padding (padding) mit ber\u00fccksichtigt werden soll, nicht aber die Randlinie (border) ?\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": {
+        "type": "Text Input (qtype_pmatch \/ Essay)",
+        "answers": ""
+    },
+    "Wie lange dauert das jQuery-FadeIn in Millisekunden in der Voreinstellung ?\n": {
+        "type": "Single-line text input",
+        "answers": ""
+    },
+    "Welche Aussage(n) ist\/sind im Zusammenhang mit jQuery richtig?\n\n\n": {
+        "type": "Multiple choice (mehrfach)",
+        "answers": [
+            "a. Die Manipulation von HTML-Elementen l\u00e4sst sich ausschlie\u00dflich mit jQuery durchf\u00fchren.",
+            "b. JQuery stellt ein browser\u00fcbergreifendes AJAX-API bereit.",
+            "c. JQuery ist erweiterbar."
+        ]
+    },
+    "Welche Aussage ist f\u00fcr das nachfolgende jQuery-Schnipsel richtig?\n\nvar hB = $(\"#banner-message\");\n$(\"#container button\").on(\"click\",function( event ){hB.show();});": {
+        "type": "Multiple choice (einzeln)",
+        "answers": [
+            "a. Zeige das #banner-message Element, das mit \"display:none\" versteckt wurde, sobald eine Schaltfl\u00e4che im Element \"#container\" bet\u00e4tigt wird.",
+            "b. Zeige das \"#banner-message\" Element, das mit \"visibility:none\" versteckt wurde, sobald eine Schaltfl\u00e4che im Element \"#container button\" bet\u00e4tigt wird."
+        ]
+    },
+    "Gegeben sei eine nachfolgende HTML Seite mit einer ungeordneten Liste:\n\n<html>\n<body>\n\n<ul>\n  <li>list item 1<\/li>\n  <li>list item 2<\/li>\n  <li>list item 3<\/li>\n<\/ul>\n<\/body>\n<\/html>\n\n\n\n\nMit dem Selektor $(\"li\") wurden alle Listenelemente selektiert.\n\nMit welcher jQuery-Methode kann man die selektierte Menge auf das erste Listenelement reduzieren ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": {
+        "type": "Text Input (qtype_pmatch \/ Essay)",
+        "answers": ""
+    }
+}

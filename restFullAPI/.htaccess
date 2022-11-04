@@ -1,0 +1,6 @@
+RewriteEngine On
+
+RewriteRule ^v2$ v2.json
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Headers "content-type"

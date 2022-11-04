@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <title>Memory Game</title>
+</head>
+<body>
+
+<style type="text/css">
+.top-buffer { margin-top:20px; }
+
+
+</style>
+
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">COSD SPWA</a>
+    </div>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link btn btn-light" href="#">Start Page</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link btn btn-light active" href="#">Memory Game</a>
+        </li>
+    </ul>
+</nav>
+
+<p></p>
+<p></p>
+
+<div ng-app="Game" ng-controller="gameCtrl" class="container">
+    <div class="row row-spacing top-buffer">
+        <div class="col">
+        </div>
+        <div class="col">
+            <div style="width: 120px; height: 120px; background-color: {{parkingPositionColor[0]}};"></div>
+        </div>
+        <div class="col">
+            <!--<img src="http://lorempixel.com/150/150/food">-->
+            <div ng-click="swap('0')" style="width: 120px; height: 120px; background-color: {{gameFieldBG[0]}};"></div>
+        </div>
+        <div class="col">
+            <div ng-click="swap('1')" style="width: 120px; height: 120px; background-color: {{gameFieldBG[1]}};"></div>
+        </div>
+        <div class="col">
+            <div style="width: 120px; height: 120px; background-color: {{parkingPositionColor[4]}};"></div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-secondary" ng-click="start()">Start Game</button>
+        </div>
+    </div>
+    <div class="row row-spacing top-buffer">
+        <div class="col">
+        </div>
+        <div class="col">
+            <div style="width: 120px; height: 120px; background-color: {{parkingPositionColor[1]}};"></div>
+        </div>
+        <div class="col">
+            <!--<img src="http://lorempixel.com/150/150/food">-->
+            <div ng-click="swap('2')" style="width: 120px; height: 120px; background-color: {{gameFieldBG[2]}};"></div>
+        </div>
+        <div class="col">
+            <div ng-click="swap('3')" style="width: 120px; height: 120px; background-color: {{gameFieldBG[3]}};"></div>
+        </div>
+        <div class="col">
+            <div style="width: 120px; height: 120px; background-color: {{parkingPositionColor[5]}};"></div>
+        </div>
+        <div class="col">
+        </div>
+</div>
+
+<script>
+    var app = angular.module("Game", []);
+    // creates random number
+    app.service('rand', function(){
+        this.toRand = function(){
+            var x = Math.random() * 3;
+            var t = Math.round(x);
+            return t;
+        }
+    });
+
+    app.controller("gameCtrl", function($scope, rand){
+        $scope.needsStart = true;
+        $scope.counter = 0;
+        // holds background game images in parking positions
+        $scope.parkingPositionColor = ["#FF4233","#F9FF33"];
+        // shows whether or not parking position occupied by game image
+        $scope.parkingPositionOI = [true,true];
+        // holds background values for game area. Default #aaa. Changes to game image
+        $scope.gameFieldBG = ["#aaa","#aaa","#aaa","#aaa"];
+        // Positions of game images after game start. Initially covered by corresponding gameFieldBG an replaced on click
+        $scope.gameFieldV = ["#aaa","#aaa","#aaa","#aaa"];
+        // Indicates whether game image in given position is set
+        $scope.gameFieldVOI = [false,false,false,false];
+        // Holds positions of previously selected game images for comparison. Default -1. Size 2
+        $scope.gameImgSel = [-1,-1];
+        $scope.temp = "";
+        // responds to click events in the gaming area - main gaming function
+        $scope.swap = function(x){
+            if($scope.counter == 2){
+                $scope.reset("#aaa");
+                console.log('Counter is 2 - reset to grey');
+            }
+            $scope.temp = $scope.gameFieldBG[x];
+            if($scope.temp === "#aaa"){
+                $scope.gameFieldBG[x] = $scope.gameFieldV[x];
+                $scope.gameImgSel[$scope.counter] = x;
+                $scope.counter++;
+                console.log('Set color for index: ' + x);
+                console.log(' color arr ' + $scope.gameFieldV);
+            }
+            // compare two game images
+            if($scope.counter == 2){
+                if($scope.gameFieldBG[$scope.gameImgSel[0]] == $scope.gameFieldBG[$scope.gameImgSel[1]]){
+                    var t = $scope.getParkingPosition();
+                    $scope.parkingPositionOI[t] = true;
+                    $scope.parkingPositionColor[t] = $scope.gameFieldBG[x];
+                    $scope.reset("#abb");
+
+                }
+            }
+
+        }
+        //starts the game - populates game fields, resets parking positions, updates bookkeeping arrays
+        $scope.start = function() {
+            var t = $scope.getParkingPosition();
+            if(t == -1){
+                $scope.gameFieldBG = ["#aaa","#aaa","#aaa","#aaa"];
+                $scope.gameFieldV = ["#aaa","#aaa","#aaa","#aaa"];
+                $scope.gameFieldVOI = [false,false,false,false];
+                $scope.needsStart = true;
+            }
+            if($scope.needsStart){
+                for(i = 0; i < $scope.parkingPositionColor.length; i++){
+                    $scope.setFieldV(i);
+                    $scope.setFieldV(i);
+                    $scope.parkingPositionColor[i] = "#abb";
+                    $scope.parkingPositionOI[i] = false;
+                }
+                $scope.needsStart = false;
+            }
+        }
+        // sets the value for one game area cell
+        $scope.setFieldV = function(i) {
+            var x = rand.toRand();
+            console.log('Position occupied: ' + x);
+            if($scope.gameFieldVOI[x]){
+                while(true){
+                    var y = rand.toRand();
+                    console.log('New Position: ' + y);
+                    if(!$scope.gameFieldVOI[y]){
+                        $scope.gameFieldV[y] = $scope.parkingPositionColor[i];
+                        $scope.gameFieldVOI[y] = true;
+                        break;
+                    }
+                }
+            }
+            else{
+                $scope.gameFieldV[x] = $scope.parkingPositionColor[i];
+                $scope.gameFieldVOI[x] = true;
+            }
+        }
+        // resets state after two cells clicked during the game
+        $scope.reset = function(color){
+            $scope.counter = 0;
+            $scope.gameFieldBG[$scope.gameImgSel[0]] = color;
+            $scope.gameFieldBG[$scope.gameImgSel[1]] = color;
+            $scope.gameImgSel = [-1,-1];
+        }
+        // returns first available parking position
+        $scope.getParkingPosition = function(){
+            var x = -1;
+            for(i = 0; i < $scope.parkingPositionOI.length; i++){
+                console.log('Parking Position val: ' + $scope.parkingPositionOI[i]);
+                if(!$scope.parkingPositionOI[i]){
+                    x = i;
+                    return x;
+                }
+            }
+            return x;
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

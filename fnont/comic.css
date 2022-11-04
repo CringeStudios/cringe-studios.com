@@ -1,0 +1,10 @@
+@font-face {
+	font-family: "Comic Mono";
+	src: url('ComicMono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: "Comic Mono";
+	font-weight: boldM
+	src: url('ComicMono-Bold.ttf') format('truetype');
+}

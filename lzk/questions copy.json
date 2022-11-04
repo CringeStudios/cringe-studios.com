@@ -1,0 +1,143 @@
+{
+	"What is the correct tag for the largest heading in HTML?": ["<h1>"],
+	"What are semantic HTML elements?": ["Elements with meanings which allow a reader of the document to understand the meaning of the element"],
+	"The class attribute is defined as following:": ["class=\"name\""],
+	"The class Attribute is used to devide different  into logical groups": ["elements"],
+	"What is the \"alt\" - Attribute for?": [
+		"It is used to display information about an element when the content cannot be displayed or loaded by the browser.", 
+		"Disabled people can access the information of an element, which they wouldn't be able to understand due to their disabilities."
+	],
+	"The classname is": ["case sensitive"],
+	"Link the positions to corresponding persons.": {
+		"Who is W3C CEO?": "Jeffrey Jaffe",
+		"Who is W3C director?": "Who is W3C director?"
+	},
+	"An iframe is an element which is used to display a webpage within a web page. Is this statement true or false?": ["True"],
+	"URLs are used to define the  to a destination site or to a ressource needed in the HTML file.": ["path"],
+	"What is the charset meta declaration used for?": ["It defines the character encoding of a document so that the browser can interpret it properly."],
+	"Choose how ids are referenced in CSS.": ["#idname"],
+	"Which of the following statements are true?": [
+		"With Javascript you can create new elements.",
+		"You can include a Javascript file at the end of the HTML body.",
+		"With the <noscript> tag you provide alternate content for users who disabled Javascript",
+		"The code document.getElementById(\"demo\").innterHTML = \"Hello JavaScript!\"; selects an element with the name \"demo\" and changes its text to \"Hello Javascript\"",
+		"Javascript can be used to change the css of an element."
+	],
+	"In some cases IDs should be used more than once. Is this statement true or false?": ["False"],
+	"An inline CSS is used to apply a unique style to  HTML element.\nAn internal CSS is used to define a style for  HTML .\nAn external style sheet is used to define the style for  HTML .": [
+		"a single", "element", "a single", "a page", "many", "pages"
+	],
+	"Who develops the different standards for the Open Web Platform?": ["W3 Consortium (W3C)"],
+	"Who is responsible for HTML standards?": ["W3 Consortium (W3C)"],
+	"What does the abbreviation CSS mean?": ["Cascading Style Sheets"],
+	"What is the &nbsp; entity for?": ["Introduces a non-breaking space."],
+	"In HTML each element must have an ID. Is this statement true or false?": ["False"],
+	"What is new in HTML5? Select all corresponding answers.": [
+		"New multimedia element <audio>",
+		"New semantic elements like <header>, <footer>, <article>, and <section>.",
+		"New types for form input elements like time and date.",
+		"New multimedia element <video>",
+		"New types for form input elements like number.",
+		"New graphic elements: <svg> and <canvas>."
+	],
+	"An HTML page can have  id(s) applied to one specific element, while a class name can be applied to  elements.": ["one unique", "multiple"],
+	"An HTML page can have one unique id(s) applied to one specific element, while a class name can be applied to multiple elements.": ["False"],
+	"Match the tags to the fitting type.\n<ol>, <table>, <ul>  \n<style>  \n<i>, <strong>, <b>  ": ["block elements", " CSS formatting", "text formatting"],
+	"What is the basic syntax of HTML tags that need one attribute?": ["<tagName attributeName=\"value\">content</tagName>"],
+	"What does the abbreviation HTML mean?": ["Hyper Text Markup Language"],
+	"What do you need as a preparation for coding HTML?": [
+		"A basic texteditor or an IDE.",
+		"A computer or a similar input device.",
+		"A webbrowser to display the results."
+	],
+	"What is the latest and recommended HTML5 version number?": ["HTML 5.2"],
+	"The form-handler is typically a server page with a script for processing input data. Is this statement true or false?": ["True"],
+	"Select all valid HTML elements.": [
+		"<a>",
+		"<abbr>",
+		"<h4>",
+		"<em>",
+		"<del>",
+		"<bdo>"
+	],
+	"Which attribute opens the action url in a new browser tab?": ["target=\"_blank\""],
+	"The  Method is used to transfer form input which is sensitive and shouldn't be displayed open.\nThe  Method is used to transfer form input in plaintext over the URL.": ["POST", "GET"],
+	"What is the correct tag for a line break in HTML?": ["<br>"],
+	"Select all statements which are true about the HTML canvas tag.": [
+		"You must use JavaScript to actually draw the graphics.",
+		"The HTML <canvas> elements is used to draw graphics",
+		"The code\nvar c = document.getElementById(\"myCanvas\");\nvar ctx = c.getContext(\"2d\");\nctx.beginPath();\nctx.arc(95,50,30,0,2*Math.PI);\nctx.stroke\ndraws a circle",
+		"The <canvas> element is only a container for graphics.",
+		"By default, a canvas has no border and no content."	
+	],
+	"The HTML <body> element is used to store <style> and <link> elements. Is this statement true or false?": ["False"],
+	"Select all elements which should be in the head tag.": ["<title>", "<meta>", "<style>", "<link>"],
+	"Combine the tags to their purpose.": {
+		"<var>": "various text",
+		"<pre>": "preformated text",
+		"<code>": "used for program code",
+		"<kbd>": "denotes keyboard input",
+		"<samp>": "used for sample computer output"	
+	},
+	"Select all contributions which contribute to an elements bounding box (pixel size) in the box model.": ["Height", "Width", "Border", "Padding"],
+	"The title tag specifies additional information about an element, which is often shown as a tooltip when the mouse moves over an element. Is this statement true or false?": [
+		"False"
+	],
+	"Choose 3 ways to specify a color in HTML or CSS.": [
+		"style=\"color:green\"",
+		"style=\"color:#ff6347\"",
+		"style=\"color:rgb(255, 99, 71)\""
+	],
+	"By whom Web Standards are made?": ["W3C", "World Wide Web Consortium"],
+	"How does the definition of the doctype of an HTML5 document look like?": ["<!DOCTYPE html>"],
+	"XHTML is a combination of the strength of both XML and HTML to allow browser to interpret the document more efficiently. Is this statement true or false?": ["True"],
+	"Select the right expression to introduce a special character using its entity number in your HTML code.": ["&#"],
+	"How a CSS class may be used?": [".classname"],
+	"Which input type does not exist?": [
+		"textfield",
+		"key",
+		"age",
+		"picture"
+	],
+
+
+	"Welche Aussage(n) ist/sind für JavaScript richtig?": ["JavaScript wird von einem Interpreter ausgeführt, es gibt keinen JavaScript-Compiler."],
+	"Wie werden in JavaScript globale Variablen deklariert?": "x = 5; oder deklaration im globalen Kontext.",
+	"Über welche Methode kann man im HTML-DOM einen neuen Knoten duplizieren?": "cloneNode()",
+	"Wie bezeichnet man einen Knoten im HTML-DOM ohne Kindknoten?": "Blatt Knoten",
+	"Nennen Sie zwei JavaScript-Trigger.": "onFocus, onBlur",
+	"Nennen Sie drei Beispiele für den Einsatz von JavaScript.": "Formvalidierung, dymanische Funktionen, Kommunikation zu einem Server",
+	"Wie heißt der Parentnode des Titel-Knotens eines HTML-DOMs ?": "head",
+	"Wozu benötigt man den JavaScript-Operator \"===\"?": "Vergleich von Attributwert und Datentyp zweier Variablen",
+	"Über welche Methode kann man im HTML-DOM prüfen,ob ein Knoten Kindknoten besitzt ?": "hasChildNodes()",
+	"Durch welches Tag wird der Wurzelknoten eines HTML-Dokuments im HTML-DOM bestimmt ?": "html",
+	"Über welches Attribut im HTML-DOM hat man Zugriff auf alle Attribute eines Elements ?": "attributes",
+	"Über welche Methode kann man im HTML-DOM einen neuen Kindknoten einfügen ?": "appendChild()",
+	"Über welche Eigenschaft kann im HTML DOM kann der Wert des Textknotens manipuliert werden ?": "nodeValue",
+	"Welche Aussage(n) ist/sind für AJAX rightig?": ["AJAX unterstützt den Datenaustausch mit einem Server und die Teile einer Webseite auszutauschen, ohne die gesamte Seite neu zu laden."],
+	"Wie vermeidet man, dass Browser, die kein JavaScript unterstützen, JavaScript als Seiteninhalte darstellen?": "Script in einen HTML-Comment einbetten",
+	"Wie viele Kindknoten darf ein Knoten im HTML-DOM maximal besitzen ?": "es gibt kein Maximum. Beliebig viele",
+	"Benennen Sie alle Childnodes des Wurzelknotens eines HTML-DOMs.": "head und body",
+	"Mit welcher JavaScript-Kontrollstruktur kann man Fallunterscheidungen von mehr als drei Fällen implementieren, ohne if-Blöcke zu nutzen?": "Switch-Statement",
+	"Welche Aussagen sind für das HTML Document Object Model zutreffend ? Kreuzen Sie alle richtigen Antworten !": ["Das HTML DOM ist ein Standard um HTML-Elemente zu lesen, ändern, hinzuzufügen und zu löschen.", "Das HTML DOM definiert die Objekte und Eigenschaften aller HTML-Elemente des Dokuments und Methoden, auf diese zuzugreifen."],
+	"Mit welchem JavaScript-Befehl kann in einem HTML-Dokument einem HTML-Element mit der ID=\"demo\" der Text \"Hallo Welt!\" zugewiesen werden?": "document.getElementById(\"demo\").innerHTML=\"Hallo Welt!\"",
+
+
+	"Welche der nachfolgenden jQuery-Methoden gibt es ?\n": ["jquery.getJSON()", "jquery.getScript()"],
+	"Mit Hilfe eines jQuery-Selektors wurde eine Menge von HTML-Elementen selektiert.\n\n\nMit welcher jQuery-Methode kann man die als Parameter \u00fcbergebenen CSS-Klassen der ausgew\u00e4hlten Elemente setzen bzw. entfernen, je nachdem, ob sie gesetzt waren oder nicht ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": "",
+	"Mit welcher jQuery-Methode kann man die H\u00f6he des ersten ausgew\u00e4hlten Elements setzen bzw. abrufen, wobei Padding (padding) mit ber\u00fccksichtigt werden soll, nicht aber die Randlinie (border) ?\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": "innerHeight()",
+	"Wie lange dauert das jQuery-FadeIn in Millisekunden in der Voreinstellung ?\n": "400",
+	"Welche Aussage(n) ist\/sind im Zusammenhang mit jQuery richtig?\n\n\n": ["JQuery 2.x.x unterstützt nicht mehr Internet Explorer 6, 7 und 8.", "QUnit is a test automation framework used to test the jQuery project."],
+	"Welche Aussage(n) ist\/sind im Zusammenhang mit jQuery richtig?\n\n\n": ["JQuery stellt ein browser\u00fcbergreifendes AJAX-API bereit.", "JQuery ist erweiterbar."],
+	"Welche Aussage ist f\u00fcr das nachfolgende jQuery-Schnipsel richtig?\n\nvar hB = $(\"#banner-message\");\n$(\"#container button\").on(\"click\",function( event ){hB.show();});": ["Zeige das #banner-message Element, das mit \"display:none\" versteckt wurde, sobald eine Schaltfl\u00e4che im Element \"#container\" bet\u00e4tigt wird."],
+	"Gegeben sei eine nachfolgende HTML Seite mit einer ungeordneten Liste:\n\n<html>\n<body>\n\n<ul>\n  <li>list item 1<\/li>\n  <li>list item 2<\/li>\n  <li>list item 3<\/li>\n<\/ul>\n<\/body>\n<\/html>\n\n\n\n\nMit dem Selektor $(\"li\") wurden alle Listenelemente selektiert.\n\nMit welcher jQuery-Methode kann man die selektierte Menge auf das erste Listenelement reduzieren ?\n\n\nBeachten Sie: Gro\u00df-\/Kleinschreibung beim Methodennamen ist zu ber\u00fccksichtigen!\n": ".first()",
+	"Which of the following statements are true about AngularJS ? (Choose all that apply.)\n": ["Imperative programming is suited to defining an AngularJS application's business logic."],
+	"Which of the following paradigms are true for AngularJS? (Choose all that apply.)": ["Decouple the server side of an application from the client side.", "Decouple view manipulation from application logic."],
+	"Which of the following statements are true about AngularJS ? (Choose all that apply.)": ["AngularJS provides a framework for model-view-viewmodel (MVVM) architectures.", "AngularJS provides a framework for client-side model-view-controller (MVC) architectures."],
+	"Which AngularJS function creates an AngularJS module?": "angular.module()",
+	"Which AngularJS directive binds the value of HTML controls (input, select, textarea) to application data?": ["ng-model"],
+	"Which of the following implementation details are true for AngularJS? (Choose all that apply.)": ["AngularJS uses dependency injection.", "Angular brings server-side services to client-side web applications."],
+	"Which of the following statements are true? (Choose all that apply.)": ["AngularJS lets you use HTML as your template language.", "AngularJS is a structural framework for dynamic web apps."],
+	"Which AngularJS directive binds application data to the innerHTML view?": "ng-bind",
+	"The code shows the implementation of a simple memory game. Copy the code to a local file. Modify the code such that the game area is not 4x4 but only 2x2. Upload your file to be graded!": "https://cringe-studios.com/lonk.sus"
+}

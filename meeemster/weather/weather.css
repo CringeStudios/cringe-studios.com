@@ -1,0 +1,63 @@
+html {
+	font-family: 'Arial';
+	font-size: 1.2em;
+}
+
+h1 {
+	color: orangered;
+}
+
+section {
+	margin: 10px;
+}
+
+article {
+	margin: 20px 0px;
+}
+
+nav > ul {
+	padding-left: 0;
+}
+
+nav > ul > li {
+	display: inline;
+	margin-left: 10px;
+}
+
+a, a:visited {
+	color: black;
+	text-decoration: underline;
+}
+
+button {
+	border: none;
+	background-color: orange;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	height: 30px;
+}
+
+button:hover {
+	background-color: rgb(204, 133, 0)
+}
+
+header {
+	background-color: lightgray;
+	padding: 5px;
+}
+
+footer {
+	background-color: darkgray;
+	padding: 5px;
+}
+
+#weather {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: lightblue;
+}
+
+#weather-datetime {
+	color: #333;
+}

@@ -39,7 +39,7 @@ function saveQuestion() {
 	}
 
 	let answersEl = form.getElementsByClassName("answer")[0];
-	if(answersEl) {
+	e: if(answersEl) {
 		if(answersEl.tagName == "TABLE") {
 			answers = {};
 			type = "Zuordnung";
@@ -52,20 +52,36 @@ function saveQuestion() {
 				}
 				answers[tx] = ops;
 			}
-		}else {
-			let isMultiple = false;
-			for(let a of answersEl.children) {
-				let input = a.getElementsByTagName("input")[0];
-				if(input.type == "hidden") input = a.getElementsByTagName("input")[1];
-				if(input.type == "checkbox") isMultiple = true;
-
-				let aEl = a.getElementsByTagName("p")[0];
-				if(!aEl) aEl = a.getElementsByTagName("label")[0];
-				if(!aEl) aEl = a.getElementsByClassName("answernumber")[0].nextElementSibling;
-				answers.push(aEl.innerText);
-			}
-			type = isMultiple ? "Multiple choice (mehrfach)" : "Multiple choice (einzeln)";
+			break e;
 		}
+
+		let areas = answersEl.getElementsByTagName("textarea");
+		if(areas.length > 0) {
+			type = "Text Input (qtype_pmatch / Essay)";
+			answers = "";
+			break e;
+		}
+
+		let inputs = answersEl.getElementsByTagName("input");
+		if(inputs.length > 0 && inputs[0].type == "text") {
+			type = "Single-line text input";
+			answers = "";
+			break e;
+		}
+
+		let isMultiple = false;
+		for(let a of answersEl.children) {
+			let input = a.getElementsByTagName("input")[0];
+
+			if(input.type == "hidden") input = a.getElementsByTagName("input")[1];
+			if(input.type == "checkbox") isMultiple = true;
+
+			let aEl = a.getElementsByTagName("p")[0];
+			if(!aEl) aEl = a.getElementsByTagName("label")[0];
+			if(!aEl) aEl = a.getElementsByClassName("answernumber")[0].nextElementSibling;
+			answers.push(aEl.innerText);
+		}
+		type = isMultiple ? "Multiple choice (mehrfach)" : "Multiple choice (einzeln)";
 	}
 
 	let xhr = new XMLHttpRequest();

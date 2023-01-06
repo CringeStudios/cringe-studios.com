@@ -423,7 +423,7 @@
 					}
 				}
 				previousValue2 = Math.floor((d.getMilliseconds() + 1000 * (d.getSeconds() % 2))/400);
-				document.getElementById("negclock").innerHTML = (365 - d.getDay()).toString().padStart(3, '0') + "-" + (24 - d.getHours()).toString().padStart(2, '0') + ":" + (60 - d.getMinutes()).toString().padStart(2, '0') + ":" + (60 - d.getSeconds()).toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
+				document.getElementById("negclock").innerHTML = (365 - d.getDay()).toString().padStart(3, '0') + "+" + (24 - d.getHours()).toString().padStart(2, '0') + ":" + (60 - d.getMinutes()).toString().padStart(2, '0') + ":" + (60 - d.getSeconds()).toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
 			}
 		</script>
 	</div>

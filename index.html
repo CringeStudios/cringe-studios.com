@@ -409,6 +409,11 @@
 		<script>
 			var myVar2 = setInterval(function() {myTimer2();}, 10);
 			var previousValue2;
+
+			function leapYear(year){
+  				return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+			}
+
 			function myTimer2() {
 				var d = new Date();
 				if(Math.floor((d.getMilliseconds() + 1000 * (d.getSeconds() % 2))/400) != previousValue2){
@@ -423,7 +428,7 @@
 					}
 				}
 				previousValue2 = Math.floor((d.getMilliseconds() + 1000 * (d.getSeconds() % 2))/400);
-				document.getElementById("negclock").innerHTML = (365 - d.getDay()).toString().padStart(3, '0') + "+" + (24 - d.getHours()).toString().padStart(2, '0') + ":" + (60 - d.getMinutes()).toString().padStart(2, '0') + ":" + (60 - d.getSeconds()).toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
+				document.getElementById("negclock").innerHTML = ((leapYear(d.getFullYear()) ? 365 : 364) - d.getDay()).toString().padStart(3, '0') + "+" + (23 - d.getHours()).toString().padStart(2, '0') + ":" + (59 - d.getMinutes()).toString().padStart(2, '0') + ":" + (59 - d.getSeconds()).toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
 			}
 		</script>
 	</div>

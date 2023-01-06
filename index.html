@@ -200,7 +200,7 @@
 		<div class="row">
 			<div class="col-md-4 gurke" style="background-color: rgb(239, 228, 176);">
 				<h1>Cringe CEO</h1>
-				<a href="https://nsfw.cringe-studios.com/securety.webp"> <!-- Ecchi.png" -->
+				<a href="https://nsfw.cringe-studios.com/Ecchi.webp"> <!-- Ecchi.png" -->
 					<img class="impostor-image" src="https://nsfw.cringe-studios.com/arrayser.webp" alt="Picture of the Cringe CEO" width="50%" style="border-radius: 50%;" />
 				</a><br />
 				<br />
@@ -399,6 +399,31 @@
 				}
 				previousValue = Math.floor(d.getMilliseconds()/333);
 				document.getElementById("clock").innerHTML = d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0') + ":" + d.getSeconds().toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
+			}
+		</script>
+	</div>
+	<div style="position:fixed;top:10px;left:10px; font-size: 7vh; border:1vh solid #ff0000">
+		<div id="negclock" style="font-weight: bold; color:#ffff00; background-color: rgb(255,0,0);">
+			Amogus
+		</div>
+		<script>
+			var myVar = setInterval(function() {myTimer();}, 10);
+			var previousValue;
+			function myTimer() {
+				var d = new Date();
+				if(Math.floor(d.getMilliseconds() + 1000 * (d.getSeconds() % 2)/400) != previousValue){
+					if(document.getElementById("negclock").isCringe == false){
+						document.getElementById("negclock").isCringe = true;
+						document.getElementById("negclock").style.color = "#ff0000";
+						document.getElementById("negclock").style.backgroundColor = "#ffff00";
+					}else{
+						document.getElementById("negclock").isCringe = false;
+						document.getElementById("negclock").style.color = "#ffff00";
+						document.getElementById("negclock").style.backgroundColor = "#ff0000";
+					}
+				}
+				previousValue = Math.floor(d.getMilliseconds() + 1000 * (d.getSeconds() % 2)/400);
+				document.getElementById("negclock").innerHTML = (365 - d.getDays().toString().padStart(3, '0')) + " - " + d.getHours().toString().padStart(2, '0') + ":" + d.getMinutes().toString().padStart(2, '0') + ":" + d.getSeconds().toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
 			}
 		</script>
 	</div>

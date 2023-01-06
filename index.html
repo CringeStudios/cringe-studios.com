@@ -411,7 +411,7 @@
 			var previousValue2;
 			function myTimer() {
 				var d = new Date();
-				if(Math.floor(d.getMilliseconds() + 1000 * (d.getSeconds() % 2)/400) != previousValue2){
+				if(Math.floor((d.getMilliseconds() + 1000 * (d.getSeconds() % 2))/400) != previousValue2){
 					if(document.getElementById("negclock").isCringe == false){
 						document.getElementById("negclock").isCringe = true;
 						document.getElementById("negclock").style.color = "#ff0000";
@@ -422,7 +422,7 @@
 						document.getElementById("negclock").style.backgroundColor = "#ff0000";
 					}
 				}
-				previousValue2 = Math.floor(d.getMilliseconds() + 1000 * (d.getSeconds() % 2)/400);
+				previousValue2 = Math.floor((d.getMilliseconds() + 1000 * (d.getSeconds()) % 2)/400);
 				document.getElementById("negclock").innerHTML = (365 - d.getDay()).toString().padStart(3, '0') + "-" + (24 - d.getHours()).toString().padStart(2, '0') + ":" + (60 - d.getMinutes()).toString().padStart(2, '0') + ":" + (60 - d.getSeconds()).toString().padStart(2, '0') + "." + d.getMilliseconds().toString().padStart(3, '0');
 			}
 		</script>

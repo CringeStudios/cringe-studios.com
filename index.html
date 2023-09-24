@@ -53,6 +53,10 @@
 		.impostor-image {
 			animation: amogus 1000s infinite linear;
 		}
+
+		.impostor-image-spinny {
+			animation: amogus 1s infinite linear;
+		}
 		
 		.article {
 			text-align:left;
@@ -201,7 +205,7 @@
 			<div class="col-md-4 gurke" style="background-color: rgb(239, 228, 176);">
 				<h1>Cringe CEO</h1>
 				<a href="https://nsfw.cringe-studios.com/Ecchi.webp"> <!-- Ecchi.png" -->
-					<img class="impostor-image" src="https://nsfw.cringe-studios.com/arrayser.webp" alt="Picture of the Cringe CEO" width="50%" style="border-radius: 50%;" />
+					<img class="impostor-image" src="https://nsfw.cringe-studios.com/arrayser.webp" alt="Picture of the Cringe CEO" width="50%" style="border-radius: 50%;" onmouseenter="spinny(this)" onmouseleave="normal(this)"/>
 				</a><br />
 				<br />
 				<div class="article">
@@ -222,7 +226,7 @@
 			</div>
 			<div class="col-md-4 gurke" style="background-color: rgb(152, 255, 152);">
 				<h1>Kölian</h1>
-				<img class="impostor-image" src="https://nsfw.cringe-studios.com/mrletsplay.webp" alt="JulianA" width="50%" style="border-radius: 50%;" /><br />
+				<img class="impostor-image" src="https://nsfw.cringe-studios.com/mrletsplay.webp" alt="JulianA" width="50%" style="border-radius: 50%;" onmouseenter="spinny(this)" onmouseleave="normal(this)"/><br />
 				<br />
 				<div class="article">
 					<p>Alias: <b><code>MrLetsplay</code></b></p>
@@ -241,7 +245,7 @@
 			</div>
 			<div class="col-md-4 gurke" style="background-color:rgb(236, 173, 173)">
 				<h1>Bolbert</h1>
-				<img class="impostor-image" src="https://nsfw.cringe-studios.com/blobert.webp" alt="JulianB" width="50%" style="border-radius: 50%;" /><br />
+				<img class="impostor-image" src="https://nsfw.cringe-studios.com/blobert.webp" alt="JulianB" width="50%" style="border-radius: 50%;" onmouseenter="spinny(this)" onmouseleave="normal(this)"/><br />
 				<br />
 				<div class="article">
 					<p>Alias: <b><code>Blobert</code></b></p>
@@ -356,6 +360,17 @@
 		}
 	</script>
 -->
+	<script>
+		function spinny(x) {
+			x.classList.remove("impostor-image");
+			x.classList.add("impostor-image-spinny");
+		}
+
+		function normal(x) {
+			x.classList.remove("impostor-image-spinny");
+			x.classList.add("impostor-image");
+		}
+	</script>
 
 	<script>
 		window.sus = () => console.log("You are sus");

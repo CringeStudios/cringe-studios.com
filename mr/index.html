@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mr's space</title>
+	<style>
+		* {
+			cursor: none;
+		}
+
+		body {
+			--bg1: rgb(0, 0, 0);
+			--bg2: rgb(15, 15, 15);
+			background-image: linear-gradient(to bottom, var(--bg1) 0px, var(--bg1) 2px, var(--bg2) 3px, var(--bg2) 6px);
+			background-size: 100% 6px;
+			background-repeat: repeat-y;
+			color: lime;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+			font-family: monospace;
+			font-size: calc(var(--ch) * 2 / 3);
+			line-height: var(--ch);
+
+			user-select: none;
+
+			/* animation-name: r;
+				animation-duration: 1s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite; */
+		}
+
+		#content {
+			width: 100%;
+			height: 100%;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fill, var(--cw));
+			grid-template-rows: repeat(auto-fill, var(--ch));
+		}
+
+		.glow {
+			text-shadow: 0 0 0 lime, 0 0 0 lime;
+			transition: text-shadow 0.5s ease;
+		}
+
+		.glow:hover {
+			text-shadow: 1px 1px 10px lime, -1px -1px 5px lime;
+			transition: text-shadow 0.5s ease;
+		}
+
+		.letter {
+			text-align: center;
+		}
+
+		.letter:hover {
+			color: black;
+		}
+
+		.clickable:hover~#cursor {
+			background-color: red;
+		}
+
+		@keyframes r {
+			0% {
+				background-position-y: 0px;
+			}
+
+			100% {
+				background-position-y: -6px;
+			}
+		}
+
+		#cursor {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: var(--cw);
+			height: var(--ch);
+			background-color: lime;
+			z-index: -1;
+		}
+	</style>
+	<noscript>
+		<style>
+			* {
+				cursor: default;
+			}
+
+			body {
+				--cw: 15px;
+				--ch: 30px;
+			}
+		</style>
+	</noscript>
+</head>
+
+<body>
+	<section id="content">
+		<noscript>N</noscript>
+		<noscript>O</noscript>
+		<noscript>M</noscript>
+		<noscript>E</noscript>
+		<noscript>D</noscript>
+		<noscript>I</noscript>
+		<noscript>A</noscript>
+	</section>
+	<div id="cursor" style="display: none;"></div>
+	<script>
+
+		const cursor = document.getElementById("cursor");
+		const body = document.getElementById("content");
+
+		const colors = ["red", "green", "blue"];
+
+		let cW = 15;
+		let cH = 2 * cW;
+		let paintMode = false;
+		let color = colors[0];
+
+		document.body.style.setProperty("--cw", cW + "px");
+		document.body.style.setProperty("--ch", cH + "px");
+
+		function getBoxPos(x, y) {
+			x -= x % cW;
+			y -= y % cH;
+			return [x, y];
+		}
+
+		function getBoxIdx(x, y) {
+			x = Math.floor(x / cW);
+			y = Math.floor(y / cH);
+			return [x, y];
+		}
+
+		function setBoxColor(x, y, color) {
+			const boxId = "box-" + x + "-" + y;
+			let box = document.getElementById(boxId);
+			if (!box) {
+				box = document.createElement("a");
+				box.id = boxId;
+				box.style.zIndex = -1;
+				box.style.position = "fixed";
+				box.style.left = "calc(var(--cw) * " + x + ")";
+				box.style.top = "calc(var(--ch) * " + y + ")";
+				box.style.width = "var(--cw)";
+				box.style.height = "var(--ch)";
+				body.appendChild(box);
+			}
+
+			box.style.backgroundColor = color;
+		}
+
+		document.onmousemove = event => {
+			let [x, y] = getBoxPos(event.x, event.y);
+
+			cursor.style.left = x + "px";
+			cursor.style.top = y + "px";
+			cursor.style.display = "block";
+
+			let [bx, by] = getBoxIdx(event.x, event.y);
+			if (paintMode) setBoxColor(bx, by, color);
+		};
+
+		document.onkeyup = event => {
+			switch (event.key) {
+				case "p":
+					paintMode = !paintMode;
+					break;
+				case "c":
+					color = colors[(colors.indexOf(color) + 1) % colors.length];
+					break;
+				case "n":
+					cW--;
+					cH = 2 * cW;
+					document.body.style.setProperty("--cw", cW + "px");
+					document.body.style.setProperty("--ch", cH + "px");
+					break;
+				case "m":
+					cW++;
+					cH = 2 * cW;
+					document.body.style.setProperty("--cw", cW + "px");
+					document.body.style.setProperty("--ch", cH + "px");
+					break;
+			}
+		}
+
+		document.onmouseout = () => {
+			cursor.style.display = "none";
+		};
+
+		let content = [
+			" ",
+			" MrLetsplay's Secret Space",
+			"  Projects",
+			["   - ", { text: "KekEngine", link: "https://git.cringe-studios.com/mr/KekEngine" }, " (+ ", { text: "Kekrooms", link: "https://github.com/MrLetsplay2003/Kekrooms" }, ")"],
+			["   - ", { text: "ShittyAuthLauncher", link: "https://github.com/MrLetsplay2003/ShittyAuthLauncher" }, ", ", { text: "ShittyAuthServer", link: "https://github.com/MrLetsplay2003/ShittyAuthServer" }, ", ", { text: "ShittyAuthPatcher", link: "https://github.com/MrLetsplay2003/ShittyAuthPatcher" }],
+		]
+
+		function appendStr(text, newLine, makeElement = () => document.createElement("a")) {
+			let first = newLine;
+			for (let l of text) {
+				let b = makeElement();
+				if (first) b.style.gridColumn = "1 / 2";
+				b.classList.add("letter");
+				b.innerText = l;
+				body.appendChild(b);
+				first = false;
+			}
+		}
+
+		for (let line of content) {
+			if (typeof line == "string") {
+				appendStr(line, true);
+			} else {
+				let first = true;
+				for (let l of line) {
+					if (typeof l == "string") {
+						appendStr(l, first);
+					} else {
+						if (l.link) {
+							l.onclick = () => window.location.href = l.link;
+						}
+
+						let makeElement = () => {
+							let b = document.createElement("a");
+							if (l.onclick) {
+								b.onmouseover = event => {
+									cursor.style.backgroundColor = "red";
+								};
+
+								b.onmouseout = event => {
+									cursor.style.backgroundColor = null;
+								}
+
+								b.classList.add("clickable");
+								b.onclick = l.onclick;
+							}
+							return b;
+						}
+
+						appendStr(l.text, first, makeElement);
+					}
+					first = false;
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

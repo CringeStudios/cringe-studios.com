@@ -3,6 +3,14 @@
 
 <head>
 	<title>Mr's space</title>
+	<link rel="icon" href="favicon.gif">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Look at my fancy website pls">
+	<meta property="og:image" content="https://nsfw.cringe-studios.com/mrletsplay.webp">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://mr.cringe-studios.com/">
+	<meta property="og:title" content="MrLetsplay's space">
+	<meta property="og:description" content="Look at my fancy website pls">
 	<style>
 		* {
 			cursor: none;
@@ -155,6 +163,12 @@
 			box.style.backgroundColor = color;
 		}
 
+		function deleteBox(x, y) {
+			const boxId = "box-" + x + "-" + y;
+			let box = document.getElementById(boxId);
+			if (box != null) box.remove();
+		}
+
 		document.onmousemove = event => {
 			let [x, y] = getBoxPos(event.x, event.y);
 
@@ -193,12 +207,125 @@
 			cursor.style.display = "none";
 		};
 
+		let snekRunning = false;
+		function playSnek() {
+			if (snekRunning) return;
+			snekRunning = true;
+
+			console.log("Hello world");
+
+			let snekPos = [0, 0];
+			let snek = [];
+			let dir = 0;
+
+			let gridW = Math.floor(window.innerWidth / cW);
+			let gridH = Math.floor(window.innerHeight / cH);
+
+			let dot = null;
+			makeFood = () => {
+				if (dot != null) deleteBox(dot[0], dot[1]);
+				dot = [Math.round(Math.random() * gridW), Math.round(Math.random() * gridH)];
+				setBoxColor(dot[0], dot[1], "pink");
+			};
+
+			makeFood();
+
+			interval = setInterval(() => {
+				gridW = Math.floor(window.innerWidth / cW);
+				gridH = Math.floor(window.innerHeight / cH);
+
+				let oldPos = [...snekPos]; // More memroy allocation
+
+				switch (dir) {
+					case 0:
+						snekPos[0]++;
+						break;
+					case 1:
+						snekPos[1]++;
+						break;
+					case 2:
+						snekPos[0]--;
+						break;
+					case 3:
+						snekPos[1]--;
+						break;
+				}
+
+				if (snekPos[0] < 0) {
+					snekPos[0] = gridW;
+				}
+
+				if (snekPos[0] > window.innerWidth / cW) {
+					snekPos[0] = 0;
+				}
+
+				if (snekPos[1] < 0) {
+					snekPos[1] = gridH;
+				}
+
+				if (snekPos[1] > window.innerHeight / cH) {
+					snekPos[1] = 0;
+				}
+
+				deleteBox(oldPos[0], oldPos[1]);
+
+				if (oldPos[0] == dot[0] && oldPos[1] == dot[1]) {
+					snek.push(oldPos);
+					makeFood();
+				}
+
+				for (let p of snek) {
+					deleteBox(p[0], p[1]);
+				}
+
+				for (let p of snek) {
+					if (snekPos[0] == p[0] && snekPos[1] == p[1]) {
+						// Die
+						snekRunning = false;
+						deleteBox(dot[0], dot[1]);
+						clearInterval(interval);
+						return;
+					}
+				}
+
+				snek.push(oldPos);
+				snek.shift();
+
+				setBoxColor(snekPos[0], snekPos[1], "green");
+				for (let p of snek) {
+					setBoxColor(p[0], p[1], "yellow");
+				}
+			}, 100);
+
+			document.addEventListener("keyup", event => {
+				switch (event.keyCode) {
+					case 38: // up
+						dir = 3;
+						break;
+					case 40: // down
+						dir = 1;
+						break;
+					case 37: // left
+						dir = 2;
+						break;
+					case 39: // right
+						dir = 0;
+						break;
+				}
+			});
+		}
+
 		let content = [
 			" ",
 			" MrLetsplay's Secret Space",
 			"  Projects",
-			["   - ", { text: "KekEngine", link: "https://git.cringe-studios.com/mr/KekEngine" }, " (+ ", { text: "Kekrooms", link: "https://github.com/MrLetsplay2003/Kekrooms" }, ")"],
+			["   - ", { text: "KekEngine", link: "https://git.cringe-studios.com/mr/KekEngine" }, " (+ ", { text: "Kekrooms", link: "https://git.cringe-studios.com/mr/Kekrooms" }, ")"],
 			["   - ", { text: "ShittyAuthLauncher", link: "https://github.com/MrLetsplay2003/ShittyAuthLauncher" }, ", ", { text: "ShittyAuthServer", link: "https://github.com/MrLetsplay2003/ShittyAuthServer" }, ", ", { text: "ShittyAuthPatcher", link: "https://github.com/MrLetsplay2003/ShittyAuthPatcher" }],
+			" ",
+			"  Programs",
+			["   - ", { text: "Snek", onclick: playSnek }],
+			" ",
+			"  p - Enable/Disable paint mode | c - Switch paint color | n/m - Zoom out/in"
 		]
 
 		function appendStr(text, newLine, makeElement = () => document.createElement("a")) {

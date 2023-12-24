@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Placeholder. Visit ftp://arrayser.cringe-studios.com for actual content.">
+        <meta property="og:image" content="https://arrayser.cringe-studios.com/thombnail.png">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://arrayser.cringe-studios.com/">
+        <meta property="og:title" content="Slider">
+        <meta property="og:description" content="Placeholder. Visit ftp://arrayser.cringe-studios.com for actual content.">
+
+        <title>Slider</title>
+        <link rel="icon" href="thombnail.png">
+
+        <style>
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                border: 0;
+                overflow: hidden;
+                /*    Disable scrollbars */
+                display: block;
+                /* No floating content on sides */
+            }
+            
+            canvas {
+                position:absolute;
+                left:0px;
+                top:0px;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+        <script type="x-shader/x-fragment" id="fragment-shader">#version 300 es
+            precision highp float;
+
+            uniform mat4 fieldLayout;
+
+            out vec4 fragColor;
+            uniform vec2 resolution;
+            uniform ivec3 dispositionInformation;
+
+            //void main() {
+            //    gl_FragColor = vec4(0.0, 0.5, gl_FragCoord.x < 0.0 ? 1 : 0, 1.0);
+            //}
+
+            int xFragCoord;
+            int yFragCoord;
+
+            int xBlockCoord;
+            int yBlockCoord;
+
+            int xGridIndex;
+            int yGridIndex;
+
+            int xRepeatedGridIndex;
+            int yRepeatedGridIndex;
+            
+            //int iMod(int x, int y){
+            //    int temp = (x/y);
+            //    return x - y * (!(y < 0) != !(x < 0) ? temp - 1 : temp);
+            //}
+
+            //int iMod2(int x, int y){
+            //    int temp = (x/y);
+            //    return x - y * temp;
+            //}
+
+            int iMod(int x,int N){
+                return (x % N + N) %N;
+            }
+
+            void calculateGridValues(){
+                xBlockCoord = iMod(int(xFragCoord), 64);
+                yBlockCoord = iMod(int(yFragCoord), 64);
+
+                xGridIndex = xFragCoord / 64;
+                xGridIndex = (xFragCoord) < 0 ? xGridIndex - 1 : xGridIndex;
+                yGridIndex = yFragCoord / 64;
+                yGridIndex = (yFragCoord) < 0 ? yGridIndex - 1 : yGridIndex;
+
+                //xRepeatedGridIndex = iMod(xGridIndex, 4);
+                //yRepeatedGridIndex = iMod(yGridIndex, 4);
+                xRepeatedGridIndex = iMod(xGridIndex, 4);
+                yRepeatedGridIndex = iMod(yGridIndex, 4);
+            }
+
+            void main(){
+                xFragCoord = int(int(gl_FragCoord.x) - int(resolution.x / 2.0));
+                yFragCoord = int(int(resolution.y - 1.0 - gl_FragCoord.y) - int(resolution.y / 2.0));
+
+                calculateGridValues();
+                
+                if(dispositionInformation.x == 0){
+                    if(xRepeatedGridIndex == dispositionInformation.y){
+                        yFragCoord -= dispositionInformation.z;
+                    }
+                }else{
+                    if(yRepeatedGridIndex == dispositionInformation.y){
+                        xFragCoord -= dispositionInformation.z;
+                    }
+                }
+
+                calculateGridValues();
+
+                float rColor = float(int(fieldLayout[yRepeatedGridIndex][xRepeatedGridIndex]) % 4) / 3.0;
+                float gColor = float(int(fieldLayout[yRepeatedGridIndex][xRepeatedGridIndex]) / 4) / 3.0;
+                float bColor = 1.0 - float(int(fieldLayout[yRepeatedGridIndex][xRepeatedGridIndex]) % 4) / 3.0;
+
+                if(xBlockCoord >= 63 || yBlockCoord >= 63){
+                    bColor = gColor = rColor = 105.0 / 255.0;
+                }else if(xBlockCoord <= 0 || yBlockCoord <= 0){
+                    gColor = bColor = rColor = 1.0;
+                }else if (xBlockCoord >= 62 || yBlockCoord >= 62){
+                    bColor = gColor = rColor = 160.0 / 255.0;
+                }else if(xBlockCoord <= 1 || yBlockCoord <= 1){
+                    gColor = bColor = rColor = 227.0 / 255.0;
+                }
+                
+                int rescalledBlockCoordX = xBlockCoord / 4;
+                int rescalledBlockCoordY = yBlockCoord / 4;
+                rescalledBlockCoordX -= 4;
+                rescalledBlockCoordY -= 4;
+                if(rescalledBlockCoordX >= 0 || rescalledBlockCoordX < 8 ||
+                   rescalledBlockCoordY >= 0 || rescalledBlockCoordY < 8){
+                    bool blackable = false;
+                    switch(int(fieldLayout[yRepeatedGridIndex][xRepeatedGridIndex])){
+                        // 2 pxls left, 2 pxls right -> client area: 64 - 4 pxls = 60 pxls, starting at pxl 2 (when counting from 0)
+                        case 0:
+                            if((rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                            (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                            (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                            (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                            (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                            (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                            (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                            (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                            (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                            (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+                            (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                            (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                            (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5) ||
+                            (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                            (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                            (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+
+                            (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 4) ||
+                            (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                            (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 2)){
+                                blackable = true;
+                            }
+                            break;
+                        case 1:
+                            if((rescalledBlockCoordX == 1 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 6)){
+                                blackable = true;
+                            }
+                            break;
+                        case 2:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 4) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 3:
+                            if((rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 4:
+                            if((rescalledBlockCoordX == 3 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 6)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 5:
+                            if((rescalledBlockCoordX == 4 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5) ||
+
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 6:
+                            if((rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 7:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 8:
+                            if((rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 9:
+                            if((rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 3) ||
+
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6)
+                               ){
+                                blackable = true;
+                            }
+                            break;
+                        case 10:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 2)){
+                                    blackable = true;
+                                }
+                            break;
+                        case 11:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)){
+                                    blackable = true;
+                                }
+                            break;
+                        case 12:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)){
+                                    blackable = true;
+                                }
+                            break;
+                        case 13:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 5)){
+                                    blackable = true;
+                                }
+                            break;
+                        case 14:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 6) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 6)){
+                                    blackable = true;
+                                }
+                            break;
+                        case 15:
+                            if((rescalledBlockCoordX == 0 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 1) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 3) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 4) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 5) ||
+                               (rescalledBlockCoordX == 0 && rescalledBlockCoordY == 6) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 3 && rescalledBlockCoordY == 0) ||
+                               (rescalledBlockCoordX == 4 && rescalledBlockCoordY == 0) ||
+
+                               (rescalledBlockCoordX == 1 && rescalledBlockCoordY == 2) ||
+                               (rescalledBlockCoordX == 2 && rescalledBlockCoordY == 2)){
+                                    blackable = true;
+                                }
+                            break;
+                        default:;
+                    }
+
+                    if(blackable){
+                        rColor = bColor = gColor = 0.0;
+                    }
+                }
+
+                // Output to screen
+                fragColor = vec4(rColor, gColor, bColor, 255.0/255.0);
+                // fragColor = vec4(128.0/255.0, 128.0/255.00, 128.0/255.0, 255);
+            }
+            
+        </script>
+        <script type="x-shader/x-vertex" id="vertex-shader">#version 300 es
+
+            precision highp float;
+
+            //in attribute float vertexId;
+            uniform vec2 resolution;
+            
+            
+            void main(){
+                vec2 currentPosition = vec2(0.0, 0.0);
+                if(int(gl_VertexID) == 0) currentPosition = vec2(-1.0, -1.0);
+                if(int(gl_VertexID) == 1) currentPosition = vec2(1.0, -1.0);
+                if(int(gl_VertexID) == 2) currentPosition = vec2(1.0, 1.0);
+                if(int(gl_VertexID) == 3) currentPosition = vec2(-1.0, 1.0);
+
+                gl_Position = vec4(currentPosition, 0.0, 1.0);
+            }
+        </script>
+
+        <script type="text/javascript" src="script.js"> </script>
+        <script type="text/javascript">
+            window.addEventListener("load", main, false);
+        </script>
+        
+    </head>
+
+    <body>
+        <canvas id="canvas">Your Browser is too old. You should update for security reasons.</canvas>
+    </body>
+</html>
+

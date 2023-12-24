@@ -1,0 +1,166 @@
+/*Headline*/
+.welcome{    
+    font-size: 250%;
+    position: fixed;
+    left: 25%;
+}
+
+/* */
+.sunset_background{
+    background-image: url('sunset.gif');
+    background-position-x: Center;
+    background-size: 80%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: medium solid #00000054;
+
+}
+/* */
+.rechteck_left { 
+    height: 15%; 
+    width: 25%; 
+    position: fixed; top: 18%; left: 15%; 
+    background-color: #00000054; 
+}
+    .rechteck_left_contact { 
+        height: 10%; 
+        width: 65%; 
+        position: fixed; top: 18%; left: 17.5%; 
+        background-color: #00000054; 
+    }
+        .rechteck_left_contact{
+            border: medium solid #00000054;
+        }
+
+/* */
+.rechteck_right { 
+    height: 15%; 
+    width: 25%; 
+    position: fixed; top: 18%; left: 60%; 
+    background-color: #00000054; 
+}
+/* */
+.chrisimo__qr{
+    position: fixed; top: 60%; left: 15%; 
+    font-size: 100%;
+    height: 15%; 
+    width: 15%; 
+}
+
+.left_edge{
+    height: 100%; 
+    width: 10%; 
+    position: fixed; top: 0%; left: 0%; 
+    background-color: rgba(255, 255, 255, 0); 
+    animation-duration: 8s;
+    animation-name: left_edge_colur;
+    animation-iteration-count: infinite;
+    border: medium solid #00000054;
+}
+    .mini_rx8_left{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(128, 42, 42);
+        position: relative;
+        animation-name: mini_rx8_left;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes mini_rx8_left {
+        0%   {background-color: rgb(128, 42, 42);left:15%; top:0%;}
+        25%  {background-color: rgb(160, 100, 10);left:20%; top:50%;}
+        50%  {background-color: rgb(141, 3, 3);left:10%; top: 90%;}
+        100% {background-color: rgb(231, 141, 5);left:15%; top:0%;}
+      }
+
+@keyframes left_edge_colur {
+    0%   {background-color: rgb(128, 42, 42);}
+    25%  {background-color: rgb(160, 100, 10);}
+    50%  {background-color: rgb(141, 3, 3);}
+    100% {background-color: rgb(231, 141, 5);}
+}
+
+.right_edge{
+    height: 100%; 
+    width: 10%; 
+    position: fixed; top: 0%; left: 90%; 
+    background-color: rgba(255, 255, 255, 0); 
+    animation-duration: 8s;
+    animation-name: right_edge_colur;
+    animation-iteration-count: infinite;
+    border: medium solid #00000054;
+}
+    .mini_rx8_right{
+        transform: scaleX(-1);
+        width: 100px;
+        height: 100px;
+        background-color: rgb(128, 42, 42);
+        position: relative;
+        animation-name: mini_rx8_right;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+    }
+        @keyframes mini_rx8_right {
+            0%   {background-color: rgb(128, 42, 42);right:-30%; top:0%;}
+            25%  {background-color: rgb(160, 100, 10);right:-30%; top:50%;}
+            50%  {background-color: rgb(141, 3, 3);right:-40%; top: 90%;}
+            100% {background-color: rgb(231, 141, 5);right:-30%; top:0%;}
+          }
+    
+@keyframes right_edge_colur {
+    0%   {background-color: rgb(128, 42, 42);}
+    25%  {background-color: rgb(160, 100, 10);}
+    50%  {background-color: rgb(141, 3, 3);}
+    100% {background-color: rgb(231, 141, 5);}
+}
+
+
+/* quick & dirty reset css */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+   }
+   
+   /* default styles */
+   body {
+    background: #e1e9ed;
+   }
+   
+   /* primary styles */
+   .site-nav {
+    width: 100%;
+    background: rgba(31, 41, 51, 0.8);
+    position: fixed;
+    top: 0px;
+   }
+   .site-nav__inner {
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+   }
+   
+   .menu-primary {
+    display: flex;
+    list-style: none;
+   }
+   .menu-primary__item {
+    color: #94a1af;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    padding: 1.5rem 1.8rem;
+    transition: ease-in-out 350ms;
+   }
+   .menu-primary__item:hover {
+    color: #ebf3fa;
+   }
+   
+   .logo {
+    color: #ebf3fa;
+    font-size: 1.45rem;
+   }

@@ -5,13 +5,26 @@
 			div {
 				transition: all 1s linear;
 			}
+			.fancy {
+				color: red;
+				overflow-y: scroll;
+				height: 30vh;
+				width: 100vw;
+			}
+			canvas {
+				border: black 1px solid;
+			}
 		</style>
 		<link rel="icon" type="image/x-icon" href="cat-memes-cats.gif">
 	</head>
 	<body>
-		<div>This site is currently under construction!</div>
-		<div>If you are in need of entertainment in the mean time click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a>!</div>
-
+		<div class="fancy">This site is currently under construction! <br>
+		If you are in need of entertainment in the mean time click <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here</a>!</div>
+		
+		<canvas height="800px" width="800px"></canvas>
+		<button id="but">Start / Stop</button>
+		<button id="clear">Clear</button>
+		
 		<script>
 			let divs = document.getElementsByTagName("div");
 			let size = parseInt(localStorage.getItem("size"));
@@ -20,7 +33,7 @@
 				div.style.fontSize = size + "px";
 			}
 
-			const max_size = 100;
+			const max_size = 60;
 			const min_size = 10;
 			let growing = true;
 
@@ -37,6 +50,139 @@
 
 				localStorage.setItem("size", size);
 			}, 1000);
-		</script>
+
+
+			let canvas = document.getElementsByTagName("canvas")[0];
+			const canvasSize = 800;
+			const gridSize = 50;
+			const pixelSize = canvasSize / gridSize;
+			let ctx = canvas.getContext("2d");
+			ctx.fillStyle = "black";
+			let draw = true;
+			let running = false;
+
+			window.addEventListener("keypress", e => {
+				if(e.key === "d") {
+					draw = !draw;
+				}
+			});
+
+			let grid = [];
+			for(let row = 0; row < gridSize; row++) {
+				grid[row] = [];
+				for(let col = 0; col < gridSize; col++) {
+					grid[row][col] = false;
+				}
+			}
+
+			let getMousePos = (canvas, evt) => {
+				var rect = canvas.getBoundingClientRect();
+				return {
+					x: evt.clientX - rect.left,
+					y: parseInt(evt.clientY - rect.top)
+				};
+			}
+			
+			let pressed = false;
+			canvas.addEventListener('mousedown', () => {
+				pressed = true;
+			});
+			canvas.addEventListener('mouseup', () => {
+				pressed = false;
+			});
+			canvas.addEventListener('click', evt => {
+				if(!running) {
+					var pos = getMousePos(canvas, evt);
+					let col = Math.floor(pos.x / pixelSize);
+					let row = Math.floor(pos.y / pixelSize);
+					grid[row][col] = true;
+					ctx.fillRect(pixelSize * col,pixelSize * row,pixelSize,pixelSize);
+				}
+			});
+			canvas.addEventListener('mousemove', evt => {
+				if(pressed && !running) {
+					var pos = getMousePos(canvas, evt);
+					let col = Math.floor(pos.x / pixelSize);
+					let row = Math.floor(pos.y / pixelSize);
+					if(draw) {
+						ctx.fillStyle = "black";
+						grid[row][col] = true;
+					} else {
+						ctx.fillStyle = "white";
+						grid[row][col] = false;
+					}
+					ctx.fillRect(pixelSize * col,pixelSize * row,pixelSize,pixelSize);
+				}
+			});
+
+			let button = document.getElementById("but");
+			button.addEventListener("click", () => {
+				running = !running;
+				console.log(running);
+			});
+
+			function getNeighbors(row, col) {
+				let neighbors = [];
+				
+				for (let i = -1; i < 2; ++i)
+					for (let j = -1; j < 2; ++j)
+						if (row + i >= 0 && row + i < gridSize && col + j >= 0 && col + j < gridSize && !(i == 0 && j == 0))
+							neighbors.push([row+i,col+j]);
+
+				return neighbors;
+			}
+
+			function conway() {
+				setInterval(() => {
+					if(running) {
+						let new_grid = [];
+						for(let row = 0; row < gridSize; row++) {
+							new_grid[row] = [];
+							for(let col = 0; col < gridSize; col++) {
+								new_grid[row][col] = grid[row][col];
+								let alive = 0;
+								neighbors = getNeighbors(row, col);
+
+								for(let n of neighbors) {
+									if(grid[n[0]][n[1]]) alive++;
+								}
+								
+								if(grid[row][col]) {
+									if(alive < 2 || alive > 3) new_grid[row][col] = false;
+								} else {
+									if(alive == 3) new_grid[row][col] = true;
+								}
+							}
+						}
+
+						grid = new_grid;
+
+						for(let row = 0; row < gridSize; row++) {
+							for(let col = 0; col < gridSize; col++) {
+								if(grid[row][col]) ctx.fillStyle = "black";
+								else ctx.fillStyle = "white";
+								ctx.fillRect(pixelSize * col,pixelSize * row,pixelSize,pixelSize);
+							}
+						}
+					}
+				}, 100);
+			}
+
+			conway();
+
+			let c = document.getElementById("clear");
+			c.addEventListener("click", () => {
+				if(!running) {
+					ctx.fillStyle = "white";
+					for(let row = 0; row < gridSize; row++) {
+						for(let col = 0; col < gridSize; col++) {
+							grid[row][col] = false;
+							ctx.fillRect(pixelSize * col,pixelSize * row,pixelSize,pixelSize);
+						}
+					}
+
+				}
+			})
+</script>
 	</body>
 </html>

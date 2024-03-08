@@ -678,3 +678,131 @@ Honigkurs Teil 1: Entstehung von Honig, Honiginhaltsstoffe
    -> Blütenhonig: 3,6 – 4,5
    -> Waldhonig: 4,0 – 5,4
  . Verschiedene im Honig enthaltende Inhibine hemmen das Wachstum von Keimen z. B. Flavonoide.
+
+
+-----------
+6.12.2023
+- Mögliche Fragen in LZK:
+ . Was passiert hierbei mit dem Wassergehalt im Honig? -> wird reduziert
+ . Wie viele Miligram wiegt eine erwachsene Biene ungefähr? -> 100
+ . 2 Einfachzucker im Nektar -> Glukose, Fruktose
+ . Welche Substanzen fügen Bienen dem Nektar hinzu? -> Enzyme, Säuren und Eiweiße, Mineralstoffe, Aminosäuren (which one is needed?)
+ . Wird Honig fluglochnah oder fluglochfern eingelagert? -> fluglochfern
+ . welcher Honigbestandteil wirkt explizit antibakteriel? -> Wasserstoffperoxid 
+ . Benennen Sie zwei Dreifachzucker -> Erlose, Melezitose
+
+
+Hygiene im Bienenvolk
+- Film: Wachsmotte
+ . Nahrung für Wachsmotten: Proteine in Waben (bspw. Schuppen von Biene)
+   -> Befallen keine von Bienen verwendeten Waben
+ . Wachsmotten hassen Zugluft
+- Bienen und Bienenvölker als Lebensraum
+ . Bienenvölker – zahlreiche Tiere auf engem Raum, geringe Distanzen für Krankheitserreger
+   -> Idealer Lebensraum für Erreger
+ . Ideale Bedingungen: warm, trocken, Eiweiß und Kohlenhydrate vorhanden
+ . Bienen bieten Lebensraum für Krankheitserreger (z. B. Nosema, Kalkbrut) und Parasiten (Varroa)
+   - Kalkbrut: Puppen verkalken und bilden sich nicht aus
+     -> Beim Schütteln der Wabe: Wabe hört sich wie Rassel an
+ . Bienen locken vielfältige Mitbewohner an
+   - Schnecken
+   - Speckkäfer
+   - Ohrenkneifer
+   - Ameisen
+   - ...
+ . Imkerliche Maßnahmen begünstigen viele Schädlinge und Gegenspieler:
+   - Viele Bienenvölker auf einem Standplatz
+   - Aufstellung: bodennah, eng, gleiche Richtung (Verflug)
+   - Austausch von Bienen und Waben
+   - Lagerung von Waben; Wiederverwendung von Waben
+   - Falsche Selektion: Schwächlinge aufpäppeln
+ . Bienenhaus: Bienenstock klebt innen an Hauswans, Öffnung nach Außen, Innen: von Hinten kann Behandelt werden = "Hinterbehandlungsmethode"
+- Anpassungen der Bienen
+ . Honigbienen koten außerhalb des Bienenvolks ab (Reinigungsflug).
+ . Honigbienen können Kot lange in der Kotblase halten.
+ . Kotblase
+   - extrem dehnungsfähig
+   - speichert den Kot bis zum Reinigungsflug
+   - Rektaldrüsen produzieren Katalase:
+     = wirkt der Zersetzung des Kotblaseninhalts entgegen -> Winterbienen halten lange aus
+     Katalase: Wasserstoffperoxid zu Sauerstoff & Wasser
+ . Aufnahme von Nektar in die Honigblase
+ . Ventiltrichter filtert Pollen, Schmutzpartikel, Nosemasporen aus dem Nektar / Honig.
+ . Einbahnstraße: Inhalt der Honigblase kann nur in den Mitteldarm abgeben werden! Inhalte aus dem Mitteldarm gelangen nicht in den Honig.
+ . Immunsystem der Bienen
+   - Humorale Immunabwehr: Substanzen in der Hämolymphe
+     . antimikrobielle Peptide
+     . immunspezifische Proteine
+   - Hämolymphe = "Blut der Insekten":
+     . Mensch: 2 Systeme (Blutkreislauf & Lymphatisches System)
+     . Bienen & Insekten: 1 System (Hämolymphe)
+   - Zelluläre Immunabwehr: Zellen in der Hämolymphe (Hämozyten), die Krankheitserreger im Bienenblut direkt bekämpfen oder bei der Wundheilung aktiv werden.
+ . Unterschied zum Menschen:
+   Keine erworbene / adaptive Immunität und keine Bildung eines immunologischen Gedächtnisses (schnelle Bildung von Antikörpern, wenn Erreger bekannt)
+   -> Grund: Die individuelle Lebensdauer der Bienen ist zu kurz!
+
+- Vorratsschutz im Bienenvolk - Honig
+ . Fluglochferne Einlagerung
+ . Honig wird mit niedrigem Wassergehalt eingelagert.
+   -> Folge: hygroskopische (wasserziehende) Wirkung, beeinflusst Keimwachstum negativ
+ . Honig werden Enzyme zugesetzt Glucoseoxidase: Entstehung von Wasserstoffperoxid
+   - hemmt Keimwachstum
+ . Honig wird mit einer Wachsschicht versehen Geschlossene Lagerung; (fast) keine Aufnahme von Wasser; keine Verschmutzung; Schutz vor Schädlingen
+- Vorratsschutz im Bienenvolk - Pollen
+ . Bienenspeichel wird dem Pollen bereits beim Höseln zugesetzt: Enzyme bauen verschieden Aminosäuren um. (Veränderungen des pH-Werts gegenüber Frischpollen)
+ . Pollen wird in den Zellen fest eingestampft.
+ . Dünner Überzug mit Honig konserviert das Bienenbrot
+ . Pollenmilbe (z. B. Tryolglyphus farinae): Vorratsschädling, lebt in den Pollenvorräten, frisst sie auf, leergefressene Pollenkörner rieseln aus den Zellen.
+- (Vorrats)schutz im Bienenvolk - Propolis
+ . Propolis: Blattknospenüberzug (Ansammlung von harzigen Stoffen) von bestimmten Bäumen und Sträuchern
+ . z.B. Tannen, Pappeln, Ulmen, Weiden, Kastanien, Eichen, Steinobstbäume usw.
+ . Verwendung durch Bienen: Baumaterial zum Abdichten, Versteifen der Zellränder, Schutz vor dem Eindringen von Keimen (antibakterielle Wirkung)
+
+- Hygiene im Bienenvolk: Verhaltensweisen
+  -> Müll fällt nach unten im Bienenstock -> gute Vorraussetzung für Tierchen und Parasiten
+ . Auswahl des Nistplatzes
+ . Nisthöhle in mehreren Metern Höhe
+ . Zugang durch Schädlinge reduziert
+ . Sterben außerhalb des Bienenvolkes
+ . Entfernen von toten Artgenossen (auch Brut) = undertaking behaviour (auch bei Ameisen)
+ . Abfall / Unrat entfernen
+ . Wachs- und Pollenkrümel
+ . Abgenagte Bestandteile der Nisthöhle (Baum)
+ . Kalbrutmumien
+ . Mumifizieren
+ . Bestandteile die nicht entfernt werden können, werden mit Propolishülle überzogen
+ . Erkennen von erkrankter und parasitierter Brut (Faulbrut, Kalkbrut, Varroa)
+ . Ausräumen erkrankter Brut
+ . Selektionskriterium in Zuchtprogrammen
+ . Putzverhalten:
+   - Bienen putzen:
+     . sich selbst (Fühler),
+     . Artgenossen
+     . und das Nest (Reinigen / Auslecken von bebrüteten Zellen)
+ . Schwarmverhalten:
+   - Teilung von Brut und Bienen
+   - Aufbau einen neuen Volkes an einem (neuen) Nistplatz mit neuem Wabenwerk
+   -> Schwarm: gut, weil auf Bienenkörper weniger Parasiten wie im Stock
+- Brutpause und Bauerneuerung
+ . Brutkrankheiten können bekämpft werden (Faulbrut)
+ . Neue Vorräte werden angelegt. (Futter, Pollen)
+ . Und was ist mit dem Wabenwerk? - Ursprüngliche Verwertung von Waben: (Wiederverwenden oder Einschmelzen)
+
+- Wachsverarbeitung - Wachsmotte
+ . Kleine Wachsmotte: Achroea grisella
+   - Kennzeichen: Röhrchenbrut
+   - Entwicklungsdauer: 14 Wochen
+ . Große Wachsmotte: Galleria mellonella
+   - Kennzeichen: Rankmaden
+   - Entwicklungsdauer: 7 Wochen
+
+- Wachsverarbeitung
+ . Wachs schmelzen
+ . Altwachs (bebrütete Waben) von Jungfernwachs (Baurahmen, Entdecklungswachs) trennen
+ . Altwachs ausscheiden (Kerzen)
+ . Rückstandssituation beachten und Naturbelassenheit sicherstellen.
+
+- Hygiene in der Imkerei
+ . Ziel ist es gesunde Völker und saubere Produkte (hygienisch, naturbelassen, rückstandsfrei) zu ernten.
+ . Die Einzelbiene und das Bienenvolk verfügen über verschiedene Anpassungsmechanismen.
+ . Diese können durch imkerliche Maßnahmen gefördert und so die Hygiene in der Imkerei gesteigert werden.

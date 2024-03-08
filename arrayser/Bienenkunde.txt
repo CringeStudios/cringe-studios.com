@@ -806,3 +806,264 @@ Hygiene im Bienenvolk
  . Ziel ist es gesunde Völker und saubere Produkte (hygienisch, naturbelassen, rückstandsfrei) zu ernten.
  . Die Einzelbiene und das Bienenvolk verfügen über verschiedene Anpassungsmechanismen.
  . Diese können durch imkerliche Maßnahmen gefördert und so die Hygiene in der Imkerei gesteigert werden.
+
+
+
+
+----------
+
+20.12.2023
+
+Bienenkunde 3 - Völkerführung in Mini-Plus Beuten
+
+1. Einführung
+- Die Bewirtschaftung von Mini-Plus-Völkern stellt eine besondere Art der Völkerbewirtschaftung dar.
+- Das Mini-Plus-System basiert auf einer sich selbst tragenden Versorgung mit Bienen, Brut und Futterreserven für die Begattung von Königinnen.
+- Begattungskästchen (Apidea, Kieler BK, etc.) müssen jedes Jahr gereinigt, mit Kunstschwarmbienen befüllt und in der Regel spätestens vor der Einwinterung aufgelöst werden.
+
+(Annotationen von Herrn Heym):
+- Schwänzel-Tanz: Nahrungsmittel und Behausungssuche
+  -> Am liebsten gehen Bienen in eine 40 Liter Behausung
+- Mini-Plus:
+ . Einzelne Kästen werden aufeinander gestellt
+   -> Gefahr, dass Turm bei Sturm umfällt
+      -> Gurt drüber spannen
+ . Überlebensfähigkeit von Bienenvölkern geringer, wegen niedrigerer Temperatur
+ . Mini-Plus Kästen haben kleine Fenster, um zu überprüfen, dass nicht zu viele Dronen drinn sind
+ . Mini-Plus Styropor-Beute ist besser als Holz-Beute, da bessere Wärme Dämung
+
+2. Komponenten & Maße
+- Innenmaße (ca 9 L)
+ . Länge: 253 mm
+ . Breite: 233 mm
+ . Höhe: 154 mm
+- Blechdeckel
+  Beutendeckel
+  Abdeckfolie
+  Honigraum 2
+  Honigraum 1
+  Absperrgitter
+  Brutraum 3
+  Brutraum 2
+  Brutraum 1
+  Gitterboden
+
+- Trennschied
+- Futtertrog
+- Deckelhaltebügel
+- Rahmen mit Hoffmann-Seiten
+ . Länge: 252 mm (Oberträger)
+ . Höhe: 159 mm
+
+3. Standard Mini-Plus Rähmchengröße
+- Vergleich mit Beutensystemen: kleinste Rähmchengröße
+- Vergleich mit Begattungssystemen: größte Rähmchengröße
+- Ursprung
+ . französisch-amerikanischer Bienenforscher Charles Dadant (1817-1902)
+ . Dadant-Magazin, Rähmchengröße 480x285 mm (Quinby-Rähmchen)
+- 1870 Modifikation durch Dadant-Imker Johann Blatt (1815-1884) "Dadant-Blatt-Beute“
+- Das Maß des Mini-Plus-Rähmchens entspricht der Größe eines halben Blatt-Honigraum-Rähmchens: „½ Blatt“.
+- A = 217 mm (gesamte Breite)
+- B = 159 mm (gesamte Höhe)
+- C = 139 mm (Breite für Waben)
+- D = 197 mm (Höhe für Waben)
+
+4. Mini-Plus Varianten
+ Zum Überwintern: Es darf von oben keine kalte Luft rein.
+  Bezeichnung Zweck
+  „Standard“                            Königinnenzucht, Überwinterung, 6 Rähmchen je Zarge
+  „Zwei in Einem“                       Königinnenzucht mit Trennschied, 3+3 Rähmchen, nur eine Zarge
+  „Modifiziert“                         6 Halb-Dadant Brutraum-Rähmchen
+  „Überwinterungssystem“                12 Rähmchen Mini Plus bzw. 6 Langstroth
+  „Modifiziertes Überwinterungssystem“  12 Rähmchen Halb-Dadant (Brutraum) bzw. 6 Rähmchen Dadant (Brutraum)
+
+5. Aufstellungsvarianten
+ - Mini-Plus Grundfläche: 30 x 30 cm2
+ - Einzelaufstellung
+ - Viererblock-Aufstellung
+
+6. Start ohne Mini-Plus-Volk
+- Kunstschwarmverfahren
+ . Vorbereitung
+   - Kunstschwarm bilden
+   - Varroabehandlung im Kunstschwarm (Milchsäure) (Mit Dispenser, dass es nicht verdampft) (Milchsäure: Gefrierpunkt mit Zucker sänken)
+   - Einfüttern
+   - Mini-Plus-Rähmchen mit Mittelwänden ausstatten
+ . Wann?     Mai / Juni
+ . Wieviel?  400 Gramm Bienen (3 Schöpfkellen voll) je Mini-Plus-Beute
+ . Was?      1 begattete Königin zusetzen
+- Wie bekommt man die Bienen und die Mini-Plus-Beute?
+  1. Fluglöcher geschlossen, Bodengitter offen
+  2. Mini-Plus-Zarge mit 2 Mittelwänden aufsetzen
+  3. Bienen einfüllen (Hinweis: Bienen mit Wasser besprühen!)
+  4. Weitere 4 Mittelwände einsetzen
+  5. Königin im Käfig mit Futterteigverschluss in eine Wabengasse einhängen
+  6. Futterzarge aufsetzen
+  7. Abdeckfolie, Beutendeckel, Blechdach
+  8. Beute kühl und dunkel platzieren
+  9. 2 Liter Zuckerwasser 1:1 in die Futterzarge geben
+  10. 2 Tagen später abends am Zielort aufstellen und Flugloch öffnen
+  11. Zweite Milchsäurebehandlung vor Verdeckelung der neuen Brut
+
+7. Erweiterung des Ablegers
+- Nach 21 Tagen
+ . Erste Bienen der zugesetzten, begatteten Königin schlüpfen.
+ . Bienenanzahl nimmt jetzt zu.
+- 2. Zarge
+ . Sobald 4 von 6 Waben vom Ableger besetzt sind.
+ . 2. Zarge mit Mittelwänden aufsetzen.
+- 3. Zarge
+ . Abhängig von der Legeleistung der Königin benötigt der Ableger bis zur Einwinterung in der Regel noch einer 3. Zarge.
+
+8. Varroa-Behandlung des Ablegers
+- Je nach Varroabefallsgrad sind im Juli der Zeitpunkt und die Methode der Sommerbehandlung auszuwählen.
+- Dazu steht eine Reihe von zugelassenen Behandlungsmitteln zur Verfügung, die in den Merkblättern der LWG umfangreich und detailliert beschrieben sind.
+- Die Restentmilbung erfolgt zwischen Ende November und Ende Dezember ausschließlich im brutfreien Volk.
+
+9. Einwinterung
+- Die Platzierung der Futtertasche erfolgt in der obersten Zarge anstelle einer Randwabe oder es wird eine Futterzarge eingesetzt.
+- Fassungsvermögen Futtertasche: ~ 0,8 Liter
+- Futterbedarf: 9 – 10 kg bei 3 Zargen
+- Die Einwinterung je Volk erfolgt in der Regel auf 2 bis 3 Zargen.
+- Futterzargen mit einem Speziallack aus dem Imkerfachhandel zur Innenversiegelung behandeln! Dies gilt auch für Styropor-Futterzargen!
+
+10. Kontrolle des Futterverbrauchs
+- Der Futterverbrauch ist in den Wintermonaten relativ gering.
+- Gegen Ende des Winters, mit dem Anlegen erster Brutflächen, steigt der Verbrauch an.
+- Mitte Februar sollte ein Mini-Plus-Volk noch etwa 5-6 gedeckelte Futterwaben zur Verfügung haben.
+- Eine volle Futterwabe beinhaltet etwa 500 g Futter.
+- Futterabriss durch Umhängen von Leerwaben unterbinden!
+
+11. Im zweiten Jahr …
+- Auswinterung
+ . Ab Mitte März (Brutkontrolle, Bienensitz, Volksstärke und Gesundheit)
+ . Zu Beginn regelmäßiger Flugaktivitäten
+ . Entfernen von Zargen mit unbesetzten Waben.
+   Entfernen von leeren, verkoteten und dunklen Waben
+ . Entfernte Waben durch Mittelwände, ggf. durch Futterwaben ersetzen
+ . Erweitern mit Mittelwandzargen
+ . Zuhängen eines leeren Rähmchens ans Brutnest für Drohnenbau
+- Erweiterung
+ . Ab Mitte April (Kontrolle der Brut und Gesundheit)
+ . Mit zunehmender Pollen- und Nektartracht
+ . Beispiel
+   - Sitzt das Volk auf 3 Zargen (mit 12 Brutwaben, 2 Pollenwaben, 4 Futterwaben) kann es notwendig sein, sofort mit 2 Mittelwandzargen zu erweitern.
+   - Bei der Erweiterung sollten Honigwaben eher in den oberen Zargen konzentriert werden, der untere Bereich sollte Platz für die Eiablage der Königin bieten.
+   - Der Kontakt zu Honigwaben sollte nicht verloren gehen.
+
+12. Wie groß wird das Mini-Plus-Volk?
+- Vergleich mit Zander-Beute
+ . 6-7 Mini-Plus-Zargen == 54 bis 63 Liter Volumen
+ . Entspricht zirka 1,5-räumiges Zandervolk
+   - Zargeninnenmaß zirka: 500 x 400 x 200 mm == 40 Liter
+ . Ende Mai
+   - 3-4 Zargen voller Brutwaben, und 3-4 Honigzargen
+   - Arbeitsaufwand für Schwarmkontrolle nimmt erheblich zu
+   - Bildung von Ablegern notwendig oder natürliches Schwärmen
+
+13. Honigproduktion im Mini-Plus-Volk?
+- Erheblicher Aufwand zur Schwarmkontrolle
+ . hohe Anzahl an Rähmchen erschweren die Schwarmkontrolle
+ . hoher Platzbedarf beim Auftrennen des Turms
+ . Überblick über die Zargenreihenfolge?
+- Wo ist die Königin?
+ . Mit zunehmender Anzahl der Zargen und Waben steigt die Wahrscheinlichkeit, dass sich die Königin versteckt oder herunterzufällt.
+- Honigernte
+ . Hohe Aufwand bei der Honigernte: je kg Honig mehr Handgriffe bei der Honigwabenentnahme, Transport, Entdeckelung und beim Schleudern erforderlich
+
+
+
+Königinnenzucht
+- Königin schützen durch "Lockenwickler", sodass diese nicht von anderen Königinnen Totgestochen wird.
+- Zuchtsystem Nicot-Corpularve-System
+ . Rückseite ist luftdurchlässig
+   -> Arbeiter können rein, aber nicht Königin
+ . nachdem Königin Eier abgelegt hat
+   -> Königin kann wieder raus
+
+- Schwarmlockmittel: riecht nach Anis
+- Bieno Zuchtsystem: Waben/Holzrahmen, bei dem man die Wand drehen kann, sodass man sich beim Umsiedeln leichter tut
+
+Königinnen-Zucht - Praxisanleitungen für Imker
+ von Gilles Fert und Klaus Nowottnick
+
+Cover:
+Die Königinnenzucht i st sowohl im Hobby- als auch im Erwerbsbereich einer der wichtigsten Aspekte für eine erfolgreiche Imkerei.
+Junge Königinnen bauen starke Völker auf und reduzieren das Schwarumrisiko, sodass die Honigvorräte im Stock verbleiben. Auch deshalb stellt der Handel mit Bienenköniginnen heutzutage für viele Imker eine zusätzliche Einkommensquelle dar.
+Das hierfür nötige Wissen über die Grundlagen und die praktische Umsetzung finden Sie in diesem Buch.
+
+Aus dem Inhalt:
+ . Aufzucht von Königinnen
+ . Auswahl der Zuchtvölker, Reizfütterung, Aufzuchtmethoden, Vorbereitung der Zuchtlatten, das Umlarven, Brutschränke
+ . Die Begattung der Königinnen
+ . Wahl der Begattungskästen, die Bedeutung der Drohnen und ihre Zucht, Begattungsableger, Verwertung der Weiselzellen, das Zwei-Königinnen-System
+ . Verwendung der Königinnen
+ . Suchen der Königinnen, Zeichnen der Königinnen, Versandkäfige, Königinnenbanken, Zusetzen von Königinnen
+ . Erstellung von Paketbienen
+ . Einführung in die künstliche Besamung
+ . Die wichtigsten Bienenrassen
+
+Planmäßige Königinnenzucht   23
+Der Zuchtkalender
+Der Zuchtkalender ist für eine erfolgreiche Zuchtarbeit unentbehrlich.
+
+Tage    Arbeitsschritte
+-45 Auswahl und Reizfütterung der Drohnenvölker, Varroabehandlung
+-30 Auswahl der Zuchtvölker und Reizfütterung
+-2 Vorbereitung der Anbrüter (Starter) und Zuchtvölker
+0  Umlarven      Weiselfuttersaftgewinnung
++1 Angebrütete Weiselnäpfchen in das Pflegevolk (Finisher) geben und füttern       Umlarven
++2 Fütterung des Pflegevolkes
++3 (Weiselfuttersaftgewinnung) Fütterung des Pflegevolkes        0 + 3 oder 0 + 3.5 = Ernte des Weiselfuttersaftes
++4 (Zucht)  Fütterung des Pflegevolkes         Zugabe einer neuen Zuchtserie
++5 Wenn beabsichtigt, kommen die verdeckelten Weiselzellen in den Brutschrank
++8 Vorbereitung der Begattungsvölkchen und deren Aufbewahrung in einem kühlen und dunklen Raum für 24 Stunden
++9 Am Abend Aufstellung der Begattungskästchen
++10 Aufteilung der Weiselzellen auf die Begattungseinheiten und Fütterung
++11 Schlupf der Königinnen möglich
++12 Schlupf der Königinnen möglich
++25 Überprüfung auf Eiablage      Zeichnen und Käfigen der begatteten Königinnen    Zugabe einer neuen, geschützten Weiselzelle und Fütterung
++26 Zugabe von ungeschützten Weiselzellen im Begattungskästchen möglich und Fütterung
+
+Anmerkung: Falls Königinnen der Rasse A. m. caucasica gezüchtet werden, sollten die Weiselzellen 24 Stunden später entnommmen werden, weil es scheint, dass sich die Königinnen dieser Rasse langsamer entwickeln, sogar im Brutschrank.
+
+Aufzucht von Königinnen    44
+Foto: Das Copularve-Zuchtsystem in Teilen
+Foto: Von dieser Seite bestiftet die Königin, die von hinten aufgesetzten Weiselnäpfchen. Das aufgesetzte Plastikabsperrgitter verhindert ihr Verlassen der kleinen Kunststoffbox.
+
+erhältlich. Bei beiden Bausätzen ist es erforderlich, zuerst die Königin des Zuchtvolkes herauszufangen und auf die kleinen Rahmen der Zuchtsysteme zu sperren, wo sie ihre Eier in die Weiselnäpfchen ablegen kann. Damit ist die erste Phase des Zuchtprogramms vorüber. Nach 24 oder 36 Stunden im Starter bzw. Anbrüter sind die angebrüteten Weiselnäpfchen reichlich mit Weiselfuttersaft gefüllt.
+Nun werden diese angebrüteten Zellen dem Finisher (Pflegevolk) eingehängt. Bevor wir aber dazu ins Detail gehen, muss noch einmal die Grundausstattung einer erfolgreichen Königinnenzucht überprüft werden. 
+ . Kompromisslose Auswahl der Zucht- und Pflegevölker
+ . Beuten mit starken Völkern
+ . Überreichliche Vorräte an Pollen für die Ammenbienen
+ . Flüssigfütterung nach jeder Bearbeitung
+ . Umsetzen der jüngsten und damit kleinsten Larven
+ . Einhaltung einer möglichst kurzen Zeit zwischen dem Umlarven und dem Umhängen der Zuchtlatten in den Starter (Anbrüter) 
+
+- Zuchtsysteme
+Schon erwähnt wurden zwei bekannte Zuchtsysteme, die mittlerweile eine breite Anzahl von Imkern und Königinnenzüchtern erreicht haben und die damit überaus erfolgreich arbeiten und sehr zufrieden sind. Bei diesen Systemen erspart man sich das leidige Umlarven, das insbesondere für Imker mit Sehschwächen oder unruhiger Hand schwierig sein kann.
+
+- Nicot-Copularve-System
+Beim Nicot-Zuchtsystem handelt es sich um ein geniales Baukastensystem, mit dem man eine effektive Zuchtarbeit leisten kann. Es besteht aus der Zuchtkassette, die auch der größte Bestandteil des Systems ist. Man verwendet sie, indem sie in ein leeres Rähmchen des Standmaßes eingebaut wird, oder aus einer bereits ausgebauten Wabe schneidet man ein Stück heraus und passt die Zuchtkassette straff dort hinein. Die andere Variante ist deren Befestigung am Oberträger des Rähmchens. Anschließend gibt man das Rähmchen mit Zuchtkassette
+
+Planmäßige Königinnenzucht    45
+Foto: Auf der Rückseite der Kassette werden die Weiselnäpfchen aufgesetzt und abschließend eine Platte aufgesetzt, die ein Verbauen der Näpfchen durch die Bienen verhindert.
+
+... in das Volk, von dem nachgezogen werden soll. Bei der Platzierung des Zuchträhmchens ist es wichtig, dass der Abstand der Zuchtkassette zu den benachbarten Rähmchen 7 bis 8 mm beträgt. Für den erstmaligen Einsatz sollte der Rahmen mit der Kassette wenigstens 14 Tage vor der Verwendung für die Zucht bereits ins Brutnest gehängt werden, damit sich die Bienen daran gewöhnen. Bei nachfolgenden Einsätzen reicht die Zugabe innerhalb von 2 bis 4 Tagen vor dem Zuchtbeginn. Wenn sich die Bienen an dieses Plastikkästchen gewöhnt und sie die Plastikweiselnäpfchen geputzt und bespeichelt haben, wird die Königin im Volk abgefangen und in eine mit Stopfen verschließbare Öffnung unter dem aufgesteckten Plastikabsperrgitter hinzugesetzt. In die Kassette können von hinten 110 Plastikweiselnäpfchen eingesteckt werden und auf der Vorderseite kann die Königin sie bestiften. Wenn alles normal verläuft, sind die Zellen bereits nach 24 oder 36 Stunden bestiftet.
+Nach dem Schlupf der Larven werden die Weiselnäpfchen von hinten entnommen und auf die Weiselnäpfchenhalter aufgesteckt. Diese werden auf die Sockel, die an Zuchtlatten befestigt sind, gesteckt. Der oder die Zuchtrahmen kommen schließlich in das vorbereitete Pflegevolk. Das System ist hervorragend, weil ein Umlarven gänzlich entfällt. Dennoch erfordert die Arbeit damit einige Erfahrung, die man aber rasch gewinnen kann. Die Größe der Zuchtkassette beträgt 147 x 130 x 28 mm.
+
+- Jenter-Umsteckverfahren
+Mit der Kassette des Jenter-Umsteckverfahrens ist man in der Lage, die Königin eines zuchtwürdigen Volkes zur gezielten Eiablage auf der Kleinwabe des Systems zu veranlassen. Die Kassette des Jenter-Umsteckverfahrens ist so konstruiert, dass sie in regelmäßigen Abständen Passlöcher besitzt. Insgesamt sind es 112. In diesen Passlöchern werden die Einsteckzellen platziert. Anschließend wird die Rückseite mit einer Abdeckplatte verschlossen, damit die Zellen nicht von den Bienen verbaut werden können und damit dort kein Honig oder Pollen deponiert wird. Das Wabenprofil der Plastikmittelwand auf der Vorderseite wird vor der ersten Anwendung mit Honig bestrichen, dann das Wabengitter platziert und das Absperrgitter aufgesteckt. Zuletzt lässt man die Königin durch die verschließbare Öffnung im vorne angebrachten Absperrgitter einlaufen. Nach einigen Stunden ist die Eiablage beendet. Das Absperrgitter wird am anderen Tag wieder abgenommen und die Königin ist frei. Nach ca. 3 Tagen schlüpfen die Larven. Die Einsteckzellen mit den frisch geschlüpften, winzigen Larven werden mit einem Stecker berührungslos aus der Kassette entnommen und in die Weiselnäpfchen umgesteckt. Es können auch dreitägige Eier umgesteckt werden. Die Weiselnäpfchen mit den Einsteckzellen werden dann in den Zellenträger umgesteckt und dieser in die Bohrungen der Zuchtlatte. 
+
+
+Mögliche Klausurfragen:
+Wie bekommt man die Bienen und die Mini-Plus-Beute? Ordnen Sie die elf notwendigen Schritte in der richtigen Reihenfolge an.  - siehe Dokument
+Wieviele Tage vor dem Umlarven der Königinnenlarven werden die Zuchtvölker idealer Weise vorbereitet ?  - 2
+Wieviele Weißelnäpfchen passen maximal in eine Zuchtkassette des Nicot-Zuchtsystems für Bienenköniginnen ?  - 110
+In einer MiniPlus Brutraumzarge sollen Rahmen mit Hoffmann-Seiten eingesetzt werden. Welche Höhe in mm sollten die Rahmen idealer Weise haben? - 159
+In welchem Jahr erhielt der deutsch-österreichische Zoologe und Verhaltensforscher und insbesondere Bienenforscher Karl Ritter von Frisch gemeinsam mit Konrad Lorenz und Nikolaas Tinbergen mit dem Nobelpreis für Physiologie oder Medizin für „ihre Entdeckungen zur Organisation und Auslösung von individuellen und sozialen Verhaltensmustern“? - 1973
+Mit welcher Farbe werden Königinnen im Jahr 2023 gekennzeichnet? - rot
+Thomas Dyer Seeley (* 17. Juni 1952) ist ein US-amerikanischer Verhaltensbiologe, Imker und Hochschullehrer an der Cornell University. Welchen Forschungsschwerpunkt hat Prof. Dr. T. D. Seeley betreffend die Honigbienen? - Erkundung der Nistplatzsuche der Honigbienen
+
+https://de.wikipedia.org/wiki/Thomas_Dyer_Seeley
+https://de.wikipedia.org/wiki/Karl_von_Frisch

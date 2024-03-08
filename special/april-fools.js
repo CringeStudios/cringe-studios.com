@@ -4,8 +4,8 @@ let OVERRIDE_APRIL_FOOLS = false;
 setInterval(() => {
 	const theTime = new Date();
 	if (!OVERRIDE_APRIL_FOOLS && (theTime.getDate() != 1 || theTime.getMonth() != 3)) {
-		document.body.style.transition = undefined;
-		document.body.style.transform = undefined;
+		document.body.style.transition = "unset";
+		document.body.style.transform = "unset";
 		return;
 	}
 

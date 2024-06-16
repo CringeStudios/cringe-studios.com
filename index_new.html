@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Home of the Cringos!">
+		<meta property="og:image" content="https://nsfw.cringe-studios.com/grimacing.png">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://cringe-studios.com/">
+		<meta property="og:title" content="¢яιηgє $тυ∂ισѕ Official Website">
+		<meta property="og:description" content="Home of the Cringos!">
+
+		<title>¢яιηgє $тυ∂ισѕ</title>
+		<link rel="icon" href="https://nsfw.cringe-studios.com/Untitled.png">
+		<link rel="stylesheet" href="/fnont/comic.css">
+
+		<script src="special/new-year.js" defer></script>
+		<script src="special/april-fools.js" defer></script>
+
+		<style>
+			.index {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				outline: none;
+				border: none;
+				background-color: white;
+			}
+
+			#slider {
+				position: fixed;
+				right: 10px;
+				bottom: 10px;
+			}
+		</style>
+
+		<script>
+			let indexes = document.getElementsByClassName("index");
+
+			function slide(v) {
+				for(let i of indexes) {
+					i.style.display = "none";
+				}
+
+				let e = document.querySelector(".index[data-index=\"" + v + "\"]");
+				if(e) e.style.display = "unset";
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="fireworks" style="pointer-events: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;">
+			<canvas id="fireworks-canvas"></canvas>
+		</div>
+		<iframe class="index" data-index="0" src="index.html"></iframe>
+		<iframe class="index" data-index="1" src="index2.html"></iframe>
+		<div id="slider">
+			<div>Revision</div>
+			<input type="range" min="0" max="1" value="10" oninput="slide(this.value)" class="slide">
+		</div>
+	</body>
+</html>

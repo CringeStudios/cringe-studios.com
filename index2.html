@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<style>
+			html {
+				background-color: var(--color1);
+				color: var(--color2);
+			}
+		</style>
+	</head>
+	<body>
+		<details>
+			<summary>Customize your theme</summary>
+			<div>
+				<input id="color1" type="color" oninput="setColor(1, this.value)">
+				<input id="color2" type="color" oninput="setColor(2, this.value)">
+			</div>
+		</details>
+		<script>
+			let color1 = document.getElementById("color1");
+			let color2 = document.getElementById("color2");
+
+			function setColor(n, color) {
+				document.documentElement.style.setProperty("--color" + n, color);
+				document.getElementById("color" + n).value = color;
+			}
+
+			function randomColor() {
+				return '#' + (Math.random() * 0xFFFFFF >> 0).toString(16);
+			}
+
+			setColor(1, randomColor());
+			setColor(2, randomColor());
+		</script>
+	</body>
+</html>

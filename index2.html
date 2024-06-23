@@ -1,21 +1,94 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
+		<link rel="stylesheet" href="/fnont/comic.css">
+
 		<style>
 			html {
 				background-color: var(--color1);
 				color: var(--color2);
 			}
+
+			body {
+				text-align: center;
+				font-family: 'Comic Mono';
+			}
+
+			#theme-customizer {
+				position: fixed;
+				top: 10px;
+				left: 10px;
+			}
+
+			table {
+				border-collapse: collapse;
+				overflow-x: scroll;
+			}
+
+			td, th {
+				padding:10px;
+				border: 1px solid var(--color2);
+			}
 		</style>
 	</head>
 	<body>
-		<details>
+		<details id="theme-customizer">
 			<summary>Customize your theme</summary>
 			<div>
 				<input id="color1" type="color" oninput="setColor(1, this.value)">
 				<input id="color2" type="color" oninput="setColor(2, this.value)">
 			</div>
 		</details>
+
+		<h1>Cronge Studios</h1>
+		<h2><i>REDESIGNED (Revision 2)</i></h2>
+
+		<br>
+
+		<h2>TEAM</h2>
+		<table style="width:100%;">
+			<thead>
+				<tr>
+					<th></th>
+					<th>TheArrayser</th>
+					<th>Blobert</th>
+					<th>MrLetsplay</th>
+					<th>Akito123321</th>
+					<th>Cody</th>
+					<th>JD</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Image</th>
+					<td><img src="https://place-hold.it/256"></td>
+					<td><img src="https://place-hold.it/256"></td>
+					<td><img src="https://place-hold.it/256"></td>
+					<td><img src="https://place-hold.it/256"></td>
+					<td><img src="https://place-hold.it/256"></td>
+					<td><img src="https://place-hold.it/256"></td>
+				</tr>
+				<tr>
+					<th>Role</th>
+					<td>Ex-CEO</td>
+					<td>Lead Jester</td>
+					<td>Chief Idiot</td>
+					<td>Plank Manager</td>
+					<td>Lead Designer</td>
+					<td></td>
+				</tr>
+				<tr>
+					<th>E-Mail</th>
+					<td>arrayser@cringe-studios.com</td>
+					<td>blobert@cringe-studios.com</td>
+					<td>mr@cringe-studios.com</td>
+					<td>akito@cringe-studios.com</td>
+					<td>cody@cringe-studios.com</td>
+					<td>jd@cringe-studios.com</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<script>
 			let color1 = document.getElementById("color1");
 			let color2 = document.getElementById("color2");
@@ -29,8 +102,8 @@
 				return '#' + (Math.random() * 0xFFFFFF >> 0).toString(16);
 			}
 
-			setColor(1, randomColor());
-			setColor(2, randomColor());
+			setColor(1, '#FFFF00');
+			setColor(2, '#FF0000');
 		</script>
 	</body>
 </html>

@@ -1,109 +1,288 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<link rel="stylesheet" href="/fnont/comic.css">
 
-		<style>
-			html {
-				background-color: var(--color1);
-				color: var(--color2);
+<head>
+	<link rel="stylesheet" href="/fnont/comic.css">
+
+	<style>
+		html {
+			background-color: var(--color1);
+			color: var(--color2);
+			background: url(https://cdn.pixabay.com/animation/2022/12/31/18/55/18-55-44-968_256.gif);
+		}
+
+		body {
+			text-align: center;
+			font-family: 'Comic Mono';
+		}
+
+		#theme-customizer {
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			z-index: 10000;
+		}
+
+		table {
+			border-collapse: collapse;
+			overflow-x: scroll;
+			background-color: var(--color1);
+		}
+
+		td,
+		th {
+			padding: 10px;
+			border: 1px solid var(--color2);
+		}
+
+		*:has(> img) {
+			background: url(data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY=);
+			/*background-color: white;*/
+			filter: contrast(var(--fry));
+			image-rendering: crisp-edges;
+		}
+
+		img {
+			mix-blend-mode: soft-light;
+			background: white;
+			isolation: isolate;
+		}
+
+		img.rotate {
+			animation: 3s ease-in-out 1s rotate infinite;
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: rotate3d(0);
 			}
 
-			body {
-				text-align: center;
-				font-family: 'Comic Mono';
+			50% {
+				transform: rotate3d(1, 1, 0, 180deg);
 			}
 
-			#theme-customizer {
-				position: fixed;
-				top: 10px;
-				left: 10px;
+			100% {
+				transform: rotate3d(0);
 			}
+		}
 
-			table {
-				border-collapse: collapse;
-				overflow-x: scroll;
-			}
+		.background {
+			background-color: var(--color1);
+		}
+	</style>
+</head>
 
-			td, th {
-				padding:10px;
-				border: 1px solid var(--color2);
-			}
-		</style>
-	</head>
-	<body>
-		<details id="theme-customizer">
-			<summary>Customize your theme</summary>
-			<div>
-				<input id="color1" type="color" oninput="setColor(1, this.value)">
-				<input id="color2" type="color" oninput="setColor(2, this.value)">
-			</div>
-		</details>
+<body>
+	<details id="theme-customizer">
+		<summary>Customize your theme</summary>
+		<div>
+			<input id="color1" type="color" oninput="setColor(1, this.value)">
+			<input id="color2" type="color" oninput="setColor(2, this.value)">
+			<input id="fry" type="range" min="1" max="20" oninput="setFry(this.value)">
+		</div>
+	</details>
 
+	<div class="background">
 		<h1>Cronge Studios</h1>
+	</div>
+
+	<div class="background">
 		<h2><i>REDESIGNED (Revision 2)</i></h2>
+	</div>
 
-		<br>
+	<br>
 
-		<h2>TEAM</h2>
-		<table style="width:100%;">
-			<thead>
-				<tr>
-					<th></th>
-					<th>TheArrayser</th>
-					<th>Blobert</th>
-					<th>MrLetsplay</th>
-					<th>Akito123321</th>
-					<th>Cody</th>
-					<th>JD</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>Image</th>
-					<td><img src="https://place-hold.it/256"></td>
-					<td><img src="https://place-hold.it/256"></td>
-					<td><img src="https://place-hold.it/256"></td>
-					<td><img src="https://place-hold.it/256"></td>
-					<td><img src="https://place-hold.it/256"></td>
-					<td><img src="https://place-hold.it/256"></td>
-				</tr>
-				<tr>
-					<th>Role</th>
-					<td>Ex-CEO</td>
-					<td>Lead Jester</td>
-					<td>Chief Idiot</td>
-					<td>Plank Manager</td>
-					<td>Lead Designer</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>E-Mail</th>
-					<td>arrayser@cringe-studios.com</td>
-					<td>blobert@cringe-studios.com</td>
-					<td>mr@cringe-studios.com</td>
-					<td>akito@cringe-studios.com</td>
-					<td>cody@cringe-studios.com</td>
-					<td>jd@cringe-studios.com</td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="background">
+		<h2>Crewmates</h2>
+	</div>
 
-		<script>
-			let color1 = document.getElementById("color1");
-			let color2 = document.getElementById("color2");
+	<table style="width:100%;">
+		<thead>
+			<tr>
+				<th></th>
+				<th>TheArrayser</th>
+				<th>Blobert</th>
+				<th>MrLetsplay</th>
+				<th>Akito123321</th>
+				<th>Cody</th>
+				<th>JD</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Image</th>
+				<td><img src="https://i.imgflip.com/5c02mv.gif" width="256" height="256"></td>
+				<td><img class="rotate" src="https://nsfw.cringe-studios.com/jester.gif"></td>
+				<td><img src="https://media.tenor.com/IKi9_tdSveIAAAAi/miku-hatsune.gif" width="256" height="256"></td>
+				<td><img src="https://media.tenor.com/ZfVdtde6BUsAAAAM/rimuru-rimuru-tempest.gif" width="256"
+						height="256"></td>
+				<td><img src="https://place-hold.it/256"></td>
+				<td><img src="https://media1.tenor.com/m/1y8zDc-ll-EAAAAd/3d-saul-saul-goodman.gif" width="256"
+						height="256"></td>
+			</tr>
+			<tr>
+				<th>Alias</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Role</th>
+				<td>Ex-CEO</td>
+				<td>Lead Jester</td>
+				<td>Chief Idiot</td>
+				<td>Plank Manager</td>
+				<td>Lead Designer</td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>E-Mail</th>
+				<td>arrayser@cringe-studios.com</td>
+				<td>blobert@cringe-studios.com</td>
+				<td>mr@cringe-studios.com</td>
+				<td>akito@cringe-studios.com</td>
+				<td>cody@cringe-studios.com</td>
+				<td>jd@cringe-studios.com</td>
+			</tr>
+			<tr>
+				<th>Sub-Page</th>
+				<td>https://arrayser.cringe-studios.com/</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>GitHub</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Cringe Studios Git</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite OS</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite Song</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite Bean</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite Video Game</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite Programming Language</th>
+				<td><img src="https://nsfw.cringe-studios.com/C.png" width="256" height="256"></td>
+				<td><img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/115px-Python-logo-notext.svg.png"
+						width="256" height="256"></td>
+				<td><img src="https://nsfw.cringe-studios.com/java.png" width="256" height="256"></td>
+				<td></td>
+				<td><img src="https://xmission.com/blog/wp-content/uploads/2017/08/best-wordpress-plugins-2014.jpg"
+						width="256" height="256">
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Favorite Password</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Quote</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Do you like spreadsheets?</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>Flex</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
 
-			function setColor(n, color) {
-				document.documentElement.style.setProperty("--color" + n, color);
-				document.getElementById("color" + n).value = color;
-			}
+	<script>
+		let color1 = document.getElementById("color1");
+		let color2 = document.getElementById("color2");
 
-			function randomColor() {
-				return '#' + (Math.random() * 0xFFFFFF >> 0).toString(16);
-			}
+		function setColor(n, color) {
+			document.documentElement.style.setProperty("--color" + n, color);
+			document.getElementById("color" + n).value = color;
+		}
 
-			setColor(1, '#FFFF00');
-			setColor(2, '#FF0000');
-		</script>
-	</body>
+		function setFry(n) {
+			document.documentElement.style.setProperty("--fry", n);
+			document.getElementById("fry").value = n;
+		}
+
+		function randomColor() {
+			return '#' + (Math.random() * 0xFFFFFF >> 0).toString(16);
+		}
+
+		setColor(1, '#FFFF00');
+		setColor(2, '#FF0000');
+		setFry(10);
+	</script>
+</body>
+
 </html>

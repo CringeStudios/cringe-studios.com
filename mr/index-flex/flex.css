@@ -12,6 +12,7 @@
 	background-color: red;
 	padding:10px;
 	align-self: stretch;
+	z-index: 1000;
 }
 
 .mrFlexBall {
@@ -19,4 +20,5 @@
 	height: 50px;
 	border-radius: 50%;
 	background-color: blue;
+	z-index: 1000;
 }

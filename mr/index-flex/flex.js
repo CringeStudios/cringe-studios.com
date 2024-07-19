@@ -47,8 +47,8 @@ class Flex {
 
 		const BALL_SIZE = 50;
 
-		let ballPosX = 100;
-		let ballPosY = 500;
+		let ballPosX = window.visualViewport.width / 2 - BALL_SIZE / 2;
+		let ballPosY = window.visualViewport.height - BALL_SIZE - 100;
 
 		let collidableElements = document.querySelectorAll("img");
 		console.log(collidableElements);

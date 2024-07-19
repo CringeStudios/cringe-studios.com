@@ -1,0 +1,22 @@
+#mrFlex {
+	display: flex; /* hehe */
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	gap:10px;
+}
+
+.mrFlexButton {
+	border: none;
+	outline: none;
+	background-color: red;
+	padding:10px;
+	align-self: stretch;
+}
+
+.mrFlexBall {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: blue;
+}
